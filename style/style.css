@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+:root{
+    --cor-primaria: #fff;
+    --cor-secundaria:#fff;
+    --cor-terciaria:#fff;
+    --cor-font-main:#fff;
+    --cor-font-destaque:#fff;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+#header{
+    width: inherit;
+    height: 80px;
+    background-color: black;
+}
+#banner{
+    width: inherit;
+    height: 700px;
+    background-color: brown;
+}
+
+#produtos{
+    width: inherit;
+    height: 1300px;
+    background-color: gray;
+}
+#empresa{
+    width: inherit;
+    height: 600px;
+    background-color:burlywood;
+}
