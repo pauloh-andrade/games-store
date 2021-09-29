@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+    list-style: none;
 }
 :root{
     --cor-primaria: #fff;
@@ -16,14 +16,62 @@ body{
     flex-direction: column;
 }
 #header{
-    width: inherit;
-    height: 80px;
-    background-color: black;
+    width: 100%;
+    height: 66px;
+    background-color:  rgba(17,17,17,0.75);
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 2px 6px;
+}
+#header .container-redes{
+	width: 200px;
+	height: inherit;
+	background-color: #1f1f1f;
+	display: flex;
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#header #menu{
+	width: auto;
+	height: inherit;
+}
+#menu ul{
+	width: auto;
+	height: inherit;
+	display: flex;
+}
+#menu ul li{
+	height: inherit;
+	width: 100px;
+/*	background-color: aqua;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #b3b3b3;
+	font-family: calibri;
+	font-size: 1.3rem;
+	border-top: 5px transparent solid;
+	border-bottom: 5px transparent solid;
+	transition: all .3s linear;
+}
+#menu ul li:hover{
+ 	text-shadow: 0 0 20px #00fcf4;
+	border-top: 5px #00fcf4 solid;
+	cursor: pointer;
+	color: #e6fffe;
 }
 #banner{
     width: inherit;
     height: 700px;
-    background-color: brown;
+	background-image: url("../Cyberpunk.jpg");
+	background-repeat: no-repeat;
+	background-attachment: cover;
+	background-position: bottom;
+	background-size: cover;
 }
 
 #produtos{
@@ -35,4 +83,24 @@ body{
     width: inherit;
     height: 600px;
     background-color:burlywood;
+}
+#promo{
+	width: inherit;
+	height: 750px;
+	background-color: aqua;
+}
+#destaque{
+	width: inherit;
+	height: 600px;
+	background-color: blueviolet;
+}
+#contato{
+	width: inherit;
+	height: 500px;
+	background-color: brown;
+}
+#rodape{
+	width: inherit;
+	height: 80px;
+	background-color: black;
 }
