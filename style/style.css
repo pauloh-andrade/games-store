@@ -14,6 +14,7 @@
 body{
     display: flex;
     flex-direction: column;
+	background-color: #0f0f0f;
 }
 #header{
     width: 100%;
@@ -24,6 +25,7 @@ body{
 	justify-content: space-between;
 	align-items:center;
 	box-shadow:rgba(17,17,17,0.50) 0px 2px 3px;
+	z-index: 10;
 }
 #header .container-redes{
 	width: 200px;
@@ -67,32 +69,66 @@ body{
 }
 #banner{
     width: 100%;
-    height: 100vh;
+    height: 750px;
 	background-image: url("../Cyberpunk.jpg");
 	background-repeat: no-repeat;
 	background-attachment: cover;
 	background-position: bottom;
 	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: ;
 }
-#banner .btn-sobre{
+#banner .container-banner{
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to top,#0f0f0f,#0001,#0000,#0000);
+}
+.btn-sobre{
 	width: 200px;
 	height: 50px;
 	background-color: #87fabd;
 	transform: skew(-30deg);
 	border-radius: 5px;
-	margin-top: 500px;
-	margin-left: 100px;
 }
+.btn-sobree{
+	width: 200px;
+	height: 50px;
+	background-color: ;
+	transform: skew(-30deg);
+	border-radius: 5px;
+	border: 2px solid #87fabd;
+}
+
 
 #produtos{
     width: inherit;
-    height: 1300px;
-    background-color: gray;
+    min-height: 750px;
+	max-height: auto;
+/*    background-color: gray;*/
+	position: relative;
+	z-index: 0;
+	top: -90px;
+	
+}
+#produtos .container-produtos{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+#produtos .card-produto{
+	width: 340px;
+	height: 340px;
+	background-color: #203c3d;
+	border-radius: 5px;
 }
 #empresa{
     width: inherit;
     height: 600px;
-    background-color:burlywood;
+    background-color:black;
 }
 #promo{
 	width: inherit;
