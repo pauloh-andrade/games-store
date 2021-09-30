@@ -2,13 +2,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    list-style: none;
+	list-style: none;
+	outline: none;
+	border: 0;
 }
 :root{
     --cor-primaria: #fff;
-    --cor-secundaria:#fff;
+    --cor-secundaria:#3fbda8;
     --cor-terciaria:#fff;
-    --cor-font-main:#fff;
+    --cor-font-main:#b3b3b3;
     --cor-font-destaque:#fff;
 }
 body{
@@ -19,7 +21,7 @@ body{
 #header{
     width: 100%;
     height: 66px;
-    background-color:  rgba(17,17,17,0.60);
+    background-color: #1f1f1f;
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
@@ -28,19 +30,27 @@ body{
 	z-index: 10;
 }
 #header .container-redes{
-	width: 200px;
+	width: 150px;
 	height: inherit;
-	background-color: #1f1f1f;
+	background-color: ;
 	display: flex;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+	margin-right: 100px;
+}
+.icons{
+	width: 35px;
+	height: 35px;
+	filter: brightness(50%);
+}
+.icons:hover{
+	cursor: pointer;
+	filter: brightness(100%);
 }
 #header #menu{
 	width: auto;
 	height: inherit;
-}
-#menu{
 }
 #menu ul{
 	width: auto;
@@ -54,7 +64,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #b3b3b3;
+	color: var(--cor-font-main);
 	font-family: calibri;
 	font-size: 1.3rem;
 	border-top: 5px transparent solid;
@@ -70,7 +80,7 @@ body{
 #banner{
     width: 100%;
     height: 750px;
-	background-image: url("../Cyberpunk.jpg");
+	background-image: url("../img/slide/Cyberpunk.jpg");
 	background-repeat: no-repeat;
 	background-attachment: cover;
 	background-position: bottom;
@@ -79,6 +89,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	flex-direction: ;
+	
 }
 #banner .container-banner{
 	width: 100%;
@@ -106,11 +117,108 @@ body{
     width: inherit;
     min-height: 750px;
 	max-height: auto;
-/*    background-color: gray;*/
+   /* background-color: aqua; */
 	position: relative;
 	z-index: 0;
-	top: -90px;
+	top: -70px;
+	padding-left: 100px;
+	padding-right: 100px;
 	
+}
+#produtos .container-pesquisa{
+	width: inherit;
+	height: 80px;
+	/* background-color: beige; */
+	display: flex;
+}
+.container-pesquisa .container-categoria{
+	height: inherit;
+	width: 60%;
+	display: flex;
+	/* background-color: blueviolet; */
+}
+.container-categoria #menu-categoria{
+	height: inherit;
+	width: auto;
+	/* background-color: black; */
+	display: flex;
+	z-index: 10;
+	position: relative;
+}
+#menu-categoria li{
+	width: 80px;
+	height: inherit;
+	/* background-color: saddlebrown; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#menu-categoria #sub-menu{
+	height:inherit;
+	width: auto;
+	background-color:;
+	opacity: 0;
+	transition: all 2s;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-left: -1999px;
+	z-index: 0;
+	cursor: pointer;
+}
+#menu-categoria:hover > #sub-menu{
+	opacity: 1;
+	transition: all 2s;
+	margin-left: 0px;
+	
+	
+}
+#sub-menu li{
+	width: auto;
+	height: auto;
+	/* background-color: aqua; */
+	margin-left: 20px;
+	font-family: calibri;
+	font-size: 1.2rem;
+	color: var(--cor-font-main);
+}
+.container-pesquisa .container-search{
+	width: 40%;
+	height: inherit;
+	/* background-color: blue; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container-search .pesquisa{
+	width: 300px;
+	height: 35px;
+	border-radius: 20px;
+	border: 1px solid var(--cor-secundaria);
+	background-color: transparent;
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+}
+.pesquisa::after{
+	content: url(../img/icons/search.png);
+	width: 35px;
+	height: 35px;
+	background-color: var(--cor-secundaria);
+	border-radius: 0px 20px 20px 0px;
+	padding: 4px;
+	box-sizing: border-box;
+	margin-top: -1px;
+	margin-right: -1px;
+}
+.pesquisa input{
+	width: inherit;
+	height: inherit;
+	background-color: transparent;
+	font-size: 1.2rem;
+	color: var(--cor-font-main);
+	padding-left: 10px;
+	font-family: calibri;
 }
 #produtos .container-produtos{
 	display: flex;
@@ -124,6 +232,20 @@ body{
 	height: 340px;
 	background-color: #203c3d;
 	border-radius: 5px;
+	box-shadow: 0px 0px 15px #000;
+	border: 1px solid #1f1f1f;
+}
+#produtos .card-produto:hover{
+	transition: all .5s;
+	transform: scale(1.09);
+	
+
+}
+.card-produto img{
+	width: 100%;
+	height: 70%;
+	border-radius: 5px 5px 0px 0px;
+	object-fit: cover;
 }
 #empresa{
     width: inherit;
