@@ -7,21 +7,22 @@
 	border: 0;
 }
 :root{
-    --cor-primaria: #fff;
+    --cor-primaria:#1f1f1f;
     --cor-secundaria:#3fbda8;
-    --cor-terciaria:#fff;
+    --cor-terciaria:#0f0f0f;
     --cor-font-main:#b3b3b3;
     --cor-font-destaque:#fff;
 }
 body{
     display: flex;
     flex-direction: column;
-	background-color: #0f0f0f;
+	background-color: var(--cor-terciaria);
 }
+/**********************Seção do Header*******************************/
 #header{
     width: 100%;
     height: 66px;
-    background-color: #1f1f1f;
+    background-color: var(--cor-primaria);
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
@@ -60,7 +61,6 @@ body{
 #menu ul li{
 	height: inherit;
 	width: 100px;
-/*	background-color: aqua;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -77,12 +77,12 @@ body{
 	cursor: pointer;
 	color: #e6fffe;
 }
+/**********************Seção do banner*******************************/
 #banner{
     width: 100%;
     height: 750px;
 	background-image: url("../img/slide/Cyberpunk.jpg");
 	background-repeat: no-repeat;
-	background-attachment: cover;
 	background-position: bottom;
 	background-size: cover;
 	display: flex;
@@ -113,34 +113,33 @@ body{
 }
 
 
+/**********************Seção dos Produtos*******************************/
+
+
+
 #produtos{
     width: inherit;
     min-height: 750px;
 	max-height: auto;
-   /* background-color: aqua; */
 	position: relative;
 	z-index: 0;
 	top: -70px;
 	padding-left: 100px;
 	padding-right: 100px;
-	
 }
 #produtos .container-pesquisa{
 	width: inherit;
 	height: 80px;
-	/* background-color: beige; */
 	display: flex;
 }
 .container-pesquisa .container-categoria{
 	height: inherit;
 	width: 60%;
 	display: flex;
-	/* background-color: blueviolet; */
 }
 .container-categoria #menu-categoria{
 	height: inherit;
 	width: auto;
-	/* background-color: black; */
 	display: flex;
 	z-index: 10;
 	position: relative;
@@ -148,7 +147,6 @@ body{
 #menu-categoria li{
 	width: 80px;
 	height: inherit;
-	/* background-color: saddlebrown; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -176,7 +174,6 @@ body{
 #sub-menu li{
 	width: auto;
 	height: auto;
-	/* background-color: aqua; */
 	margin-left: 20px;
 	font-family: calibri;
 	font-size: 1.2rem;
@@ -185,7 +182,6 @@ body{
 .container-pesquisa .container-search{
 	width: 40%;
 	height: inherit;
-	/* background-color: blue; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -229,33 +225,113 @@ body{
 }
 #produtos .card-produto{
 	width: 340px;
-	height: 340px;
-	background-color: #203c3d;
+	height: 380px;
+	background-color: var(--cor-terciaria);
 	border-radius: 5px;
 	box-shadow: 0px 0px 15px #000;
 	border: 1px solid #1f1f1f;
+	display: flex;
+	flex-direction: column;
 }
 #produtos .card-produto:hover{
 	transition: all .5s;
 	transform: scale(1.09);
-	
-
 }
 .card-produto img{
 	width: 100%;
-	height: 70%;
+	height: 62%;
 	border-radius: 5px 5px 0px 0px;
 	object-fit: cover;
 }
+.card-produto .hr-card{
+	width: 100%;
+	height: 8px;
+	background-image: linear-gradient(to left, #00ffcc, #004cff,#7dffe9,#0800ff);
+	display: flex;
+	margin-top: 0px;
+}
+.container-row .btn-mais{
+	width: 90px;
+	height: 35px;
+	background-color:#11d15a;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #0009;
+	cursor: pointer;
+	font-family: calibri;
+	font-weight: bold;
+	color: #0e2e18;
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card-produto .btn-mais:hover{
+	box-shadow: inset 0 0 10px #97f7bc;
+}
+.card-produto .nome-jogo{
+	width: inherit;
+	height: 30px;
+	font-family: calibri;
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--cor-font-main);
+	padding-left: 20px;		
+}
+.card-produto .container-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.card-produto .desc-jogo{
+	width: inherit;
+	height: 60px;
+	padding-left: 20px;
+	font-family: calibri;
+	font-size: 1.2rem;
+	text-align: left;
+	color: var(--cor-font-main);
+}
+.container-row .preco-jogo{
+	width: 160px;
+	height: 50px;
+	display: flex;
+	justify-content: flex-end;
+	font-family: calibri;
+	color: var(--cor-font-main);
+	font-size: 2rem;
+}
+
+
+/**********************Seção da Empresa*******************************/
+
+
+
 #empresa{
     width: inherit;
     height: 600px;
-    background-color:black;
+    background-color:#121212;
+	display: flex;
+}
+#empresa .container-sobre{
+	width: 53%;
+	height: inherit;
+/*	background-color: brown;*/
+	
+	
+}
+#empresa .container-img-empresa{
+	width: 47%;
+	height: inherit;
+	background-image: url(../img/slide/sobre.jpg) ;
+	clip-path: polygon(34% 0, 100% 0, 100% 100%, 0% 100%);
+	background-repeat: no-repeat;
+	background-position: left;
+	
 }
 #promo{
 	width: inherit;
 	height: 750px;
-	background-color: aqua;
+	background-color: var(--cor-terciaria);
 }
 #destaque{
 	width: inherit;
