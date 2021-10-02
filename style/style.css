@@ -10,13 +10,36 @@
     --cor-primaria:#1f1f1f;
     --cor-secundaria:#3fbda8;
     --cor-terciaria:#0f0f0f;
+	--cor-quartenaria:#121212;
     --cor-font-main:#b3b3b3;
-    --cor-font-destaque:#fff;
+    --cor-destaque: #00fcf4;
+	--cor-borda:#1f1f1f;
 }
 body{
     display: flex;
     flex-direction: column;
 	background-color: var(--cor-terciaria);
+}
+
+@font-face{
+	font-family: 'roboto'; 
+	src: url('../Roboto/Roboto-Regular.ttf');
+}
+
+h1,p{
+	font-family:  'roboto', sans-serif;
+	color: var(--cor-font-main);
+	font-size: 2.7rem;
+	font-weight: 100;
+	width:auto;
+	height: auto;
+/*	background-color: aqua;*/
+}
+p{
+	font-size: 1.5rem;
+}
+.destaque{
+	color: var(--cor-destaque);
 }
 /**********************Seção do Header*******************************/
 #header{
@@ -73,7 +96,7 @@ body{
 }
 #menu ul li:hover{
  	text-shadow: 0 0 20px #00fcf4;
-	border-top: 5px #00fcf4 solid;
+	border-top: 5px var(--cor-destaque) solid;
 	cursor: pointer;
 	color: #e6fffe;
 }
@@ -81,9 +104,9 @@ body{
 #banner{
     width: 100%;
     height: 750px;
-	background-image: url("../img/slide/Cyberpunk.jpg");
+	background-image: url("../img/slide/battlefield.jpg");
 	background-repeat: no-repeat;
-	background-position: bottom;
+	background-position: top;
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -223,17 +246,17 @@ body{
 	flex-wrap: wrap;
 	gap: 15px;
 }
-#produtos .card-produto{
+.card-produto{
 	width: 340px;
 	height: 380px;
 	background-color: var(--cor-terciaria);
 	border-radius: 5px;
 	box-shadow: 0px 0px 15px #000;
-	border: 1px solid #1f1f1f;
+	border: 1px solid var(--cor-borda);
 	display: flex;
 	flex-direction: column;
 }
-#produtos .card-produto:hover{
+.card-produto:hover{
 	transition: all .5s;
 	transform: scale(1.09);
 }
@@ -266,7 +289,7 @@ body{
 	align-items: center;
 }
 .card-produto .btn-mais:hover{
-	box-shadow: inset 0 0 10px #97f7bc;
+	box-shadow: inset 0 0 15px #b2f7cd;
 }
 .card-produto .nome-jogo{
 	width: inherit;
@@ -308,20 +331,36 @@ body{
 
 #empresa{
     width: inherit;
-    height: 600px;
-    background-color:#121212;
+    min-height: 600px;
+	max-height: auto;
+    background-color:var(--cor-quartenaria);
 	display: flex;
 }
 #empresa .container-sobre{
 	width: 53%;
 	height: inherit;
 /*	background-color: brown;*/
-	
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	gap: 20px;
+}
+.container-sobre .titulo,.container-sobre .texto{
+	width: 100%;
+	height: auto;
+	padding-left: 50px;
+/*	background-color: blueviolet;*/
+}
+.container-sobre .texto{
+	padding-left: 150px;
+	text-align: justify;
 }
 #empresa .container-img-empresa{
 	width: 47%;
-	height: inherit;
+	min-height: inherit;
 	background-image: url(../img/slide/sobre.jpg) ;
 	clip-path: polygon(34% 0, 100% 0, 100% 100%, 0% 100%);
 	background-repeat: no-repeat;
@@ -330,18 +369,53 @@ body{
 }
 #promo{
 	width: inherit;
-	height: 750px;
+	min-height: 750px;
+	max-height: auto;
 	background-color: var(--cor-terciaria);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 15px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	
 }
 #destaque{
 	width: inherit;
-	height: 600px;
-	background-color: blueviolet;
+	min-height: 600px;
+	max-height: auto;
+	background-image: url(../img/Banner/bannerDestaque.jpg);
+	background-size: cover;
+	background-position: bottom;
+	background-attachment: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+#destaque .card-destaque{
+	width: 350px;
+	height: 350px;
+	background-color: black;
+	border-radius: 175px;
+	border: 1px solid var(--cor-borda);
+	box-shadow: 0px 0px 20px var(--cor-primaria);
+}
+.card-destaque img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 175px;
+	
 }
 #contato{
 	width: inherit;
 	height: 500px;
-	background-color: brown;
+	background-color: var(--cor-quartenaria);
 }
 #rodape{
 	width: inherit;
