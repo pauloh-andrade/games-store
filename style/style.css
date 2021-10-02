@@ -83,12 +83,12 @@ p{
 }
 #menu ul li{
 	height: inherit;
-	width: 100px;
+	width: 110px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: var(--cor-font-main);
-	font-family: calibri;
+	font-family: 'roboto', sans-serif;
 	font-size: 1.3rem;
 	border-top: 5px transparent solid;
 	border-bottom: 5px transparent solid;
@@ -379,31 +379,41 @@ p{
 	gap: 15px;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	
+	background-image: url(../img/Banner/squad.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: contain;
+	background-blend-mode:overlay;
 }
 #destaque{
 	width: inherit;
 	min-height: 600px;
 	max-height: auto;
-	background-image: url(../img/Banner/bannerDestaque.jpg);
+/*	background-image: url(../img/Banner/bannerDestaque.jpg);*/
 	background-size: cover;
-	background-position: bottom;
-	background-attachment: fixed;
+	background-position: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 25px;
 	flex-wrap: wrap;
 	padding-top: 30px;
 	padding-bottom: 30px;
+	background-color: #151515;
 }
 #destaque .card-destaque{
 	width: 350px;
 	height: 350px;
-	background-color: black;
+	background-color: var(--cor-terciaria);
 	border-radius: 175px;
+	box-shadow: 0px 0px 15px #0008;
 	border: 1px solid var(--cor-borda);
-	box-shadow: 0px 0px 20px var(--cor-primaria);
+	transition: all .3s;
+}
+.card-destaque:hover{
+	transform: scale(1.1);
+	transition: all .5s;
+	cursor: pointer;
 }
 .card-destaque img{
 	width: 100%;
@@ -420,5 +430,5 @@ p{
 #rodape{
 	width: inherit;
 	height: 80px;
-	background-color: black;
+	background-color: var(--cor-primaria);
 }
