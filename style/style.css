@@ -19,6 +19,7 @@ body{
     display: flex;
     flex-direction: column;
 	background-color: var(--cor-terciaria);
+	overflow-x:hidden;
 }
 
 @font-face{
@@ -104,23 +105,64 @@ p{
 }
 /**********************Seção do banner*******************************/
 #banner{
-    width: 100%;
+    width: 100vw;
     height: 750px;
+	max-width:100%;
+/*
 	background-image: url("../img/slide/battlefield.jpg");
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
+*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: ;
-	
 }
-#banner .container-banner{
+.container-slide{
+	display: flex;
+	justify-content: space-between;
+	width: inherit;
+	height: 100%;
+	background-color: aquamarine;
+}
+.container-items{
+	position: absolute;
+	display: flex;
+	width: inherit;
+	height: 100%;
+	overflow: hidden;
+}
+.item{
+	width: inherit;
+	height: 100%;
+	transition: all 1s;
+}
+.item:first-child{
+	margin-left: -100%;
+}
+.item img{
+	width: inherit;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+.action-button{
+	font-size: 5rem;
+	z-index: 1;
+	width: 50px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+.container-shadow{
 	width: 100%;
 	height: 100%;
+	position: absolute;
 	background-image: linear-gradient(to top,#0f0f0f,#0001,#0000,#0000);
+	z-index: -1;
 }
+
 .btn-sobre{
 	width: 200px;
 	height: 50px;
