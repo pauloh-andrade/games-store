@@ -34,13 +34,20 @@ h1,p{
 	font-weight: 100;
 	width:auto;
 	height: auto;
-/*	background-color: aqua;*/
 }
 p{
 	font-size: 1.5rem;
 }
 .destaque{
 	color: var(--cor-destaque);
+}
+.container-centralizar{
+	width: 1450px;
+	height: auto;
+}
+.display-row{
+	display: flex;
+	flex-direction: row;
 }
 /**********************Seção do Header*******************************/
 #header{
@@ -59,7 +66,6 @@ p{
 #header .container-redes{
 	width: 150px;
 	height: inherit;
-	background-color: ;
 	display: flex;
 	display: flex;
 	justify-content: space-around;
@@ -106,7 +112,7 @@ p{
 /**********************Seção do banner*******************************/
 #banner{
     width: 100vw;
-    height: 750px;
+    height: 90vh;
 	max-width:100%;
 /*
 	background-image: url("../img/slide/battlefield.jpg");
@@ -122,19 +128,18 @@ p{
 	display: flex;
 	justify-content: space-between;
 	width: inherit;
-	height: 750px;
-	background-color: aquamarine;
+	height: 90vh;
 }
 .container-items{
 	position: absolute;
 	display: flex;
 	width: inherit;
-	height: 750px;
+	height: 90vh;
 	overflow: hidden;
 }
 .item{
 	width: inherit;
-	height: 750px;
+	height: 90vh;
 	transition: all 1s;
 }
 .item:first-child{
@@ -142,7 +147,7 @@ p{
 }
 .item img{
 	width: inherit;
-	height: 750px;
+	height: 90vh;
 	object-fit: cover;
 	object-position: top;
 }
@@ -155,12 +160,21 @@ p{
 	justify-content: center;
 	color: white;
 }
+.action-button img{
+	width: 50px;
+	height: 60px;
+	filter: brightness(80%);
+}
+.action-button img:hover{
+	filter: brightness(100%);
+	cursor: pointer;
+}
 .container-shadow{
 	width: 100%;
-	height: 100%;
+	height: 90vh;
 	position: absolute;
-	background-image: linear-gradient(to top,#0f0f0f,#0001,#0000,#0000);
-	z-index: -1;
+	background-image: linear-gradient(to bottom,transparent,transparent,#0000, #0f0f0f );
+	z-index: 0;
 }
 
 .btn-sobre{
@@ -173,7 +187,6 @@ p{
 .btn-sobree{
 	width: 200px;
 	height: 50px;
-	background-color: ;
 	transform: skew(-30deg);
 	border-radius: 5px;
 	border: 2px solid #87fabd;
@@ -186,25 +199,30 @@ p{
 
 #produtos{
     width: inherit;
-    min-height: 750px;
+	min-height: 750px;
 	max-height: auto;
 	position: relative;
 	z-index: 0;
 	top: -70px;
 	padding-left: 100px;
 	padding-right: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-#produtos .container-pesquisa{
-	width: inherit;
+.container-pesquisa{
+	width: 100%;
 	height: 80px;
 	display: flex;
+	justify-content: space-between;
+	/* background-color: brown; */
 }
-.container-pesquisa .container-categoria{
+.container-categoria{
 	height: inherit;
-	width: 60%;
+	width: auto;
 	display: flex;
 }
-.container-categoria #menu-categoria{
+#menu-categoria{
 	height: inherit;
 	width: auto;
 	display: flex;
@@ -218,10 +236,14 @@ p{
 	justify-content: center;
 	align-items: center;
 }
+#menu-categoria li:hover{
+	cursor: pointer;
+	color: white;
+
+}
 #menu-categoria #sub-menu{
 	height:inherit;
 	width: auto;
-	background-color:;
 	opacity: 0;
 	transition: all 2s;
 	display: flex;
@@ -235,8 +257,6 @@ p{
 	opacity: 1;
 	transition: all 2s;
 	margin-left: 0px;
-	
-	
 }
 #sub-menu li{
 	width: auto;
@@ -247,11 +267,12 @@ p{
 	color: var(--cor-font-main);
 }
 .container-pesquisa .container-search{
-	width: 40%;
+	width: auto;
 	height: inherit;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
+	margin-right: 50px;
 }
 .container-search .pesquisa{
 	width: 300px;
@@ -267,12 +288,12 @@ p{
 	content: url(../img/icons/search.png);
 	width: 35px;
 	height: 35px;
-	background-color: var(--cor-secundaria);
 	border-radius: 0px 20px 20px 0px;
 	padding: 4px;
 	box-sizing: border-box;
 	margin-top: -1px;
 	margin-right: -1px;
+	background-color: var(--cor-secundaria);
 }
 .pesquisa input{
 	width: inherit;
@@ -283,7 +304,9 @@ p{
 	padding-left: 10px;
 	font-family: calibri;
 }
-#produtos .container-produtos{
+.container-produtos{
+	width: inherit;
+	height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -291,8 +314,8 @@ p{
 	gap: 15px;
 }
 .card-produto{
-	width: 340px;
-	height: 380px;
+	width: 320px;
+	height: 360px;
 	background-color: var(--cor-terciaria);
 	border-radius: 5px;
 	box-shadow: 0px 0px 15px #000;
@@ -379,10 +402,13 @@ p{
 	max-height: auto;
     background-color:var(--cor-quartenaria);
 	display: flex;
+	justify-content: center;
 }
-#empresa .container-sobre{
-	width: 53%;
-	height: inherit;
+
+.container-sobre{
+	width: 50%;
+	min-height: 600px;
+	max-height: auto;
 /*	background-color: brown;*/
 	display: flex;
 	flex-direction: column;
@@ -402,18 +428,18 @@ p{
 	padding-left: 150px;
 	text-align: justify;
 }
-#empresa .container-img-empresa{
-	width: 47%;
-	min-height: inherit;
+.container-img-empresa{
+	width: 50%;
+	height: 100%;
 	background-image: url(../img/slide/sobre.jpg) ;
-	clip-path: polygon(34% 0, 100% 0, 100% 100%, 0% 100%);
+	clip-path: polygon(39% 0, 83% 0, 44% 100%, 0 100%);
 	background-repeat: no-repeat;
 	background-position: left;
 	
 }
 #promo{
 	width: inherit;
-	min-height: 750px;
+	min-height: 500px;
 	max-height: auto;
 	background-color: var(--cor-terciaria);
 	display: flex;
@@ -428,6 +454,7 @@ p{
 	background-position: bottom;
 	background-size: contain;
 	background-blend-mode:overlay;
+	padding-bottom: 50px;
 }
 #destaque{
 	width: inherit;
@@ -436,18 +463,30 @@ p{
 /*	background-image: url(../img/Banner/bannerDestaque.jpg);*/
 	background-size: cover;
 	background-position: center;
+	background-color: #151515;
+	display: flex;
+	justify-content: center;
+}
+.container-destaque{
+	width: inherit;
+	min-height: 400px;
+	max-height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 25px;
 	flex-wrap: wrap;
-	padding-top: 30px;
 	padding-bottom: 30px;
-	background-color: #151515;
 }
-#destaque .card-destaque{
-	width: 350px;
-	height: 350px;
+.container-titulo{
+	width: 100%;
+	height: auto;
+	padding: 50px;
+
+}
+.container-destaque .card-destaque{
+	width: 300px;
+	height: 300px;
 	background-color: var(--cor-terciaria);
 	border-radius: 175px;
 	box-shadow: 0px 0px 15px #0008;
@@ -470,9 +509,29 @@ p{
 	width: inherit;
 	height: 500px;
 	background-color: var(--cor-quartenaria);
+	display: flex;
+	justify-content: center;
 }
 #rodape{
 	width: inherit;
 	height: 80px;
 	background-color: var(--cor-primaria);
+}
+
+
+
+
+
+/******************** RESPONSIVIDADE ****************************/
+@media (max-width: 1340px){
+	.container-centralizar{
+		width: 1300px;
+	}
+}
+
+@media (max-width: 650px){
+	.container-centralizar{
+		width: 350px;
+	}
+
 }
