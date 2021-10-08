@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style/style.css">
 	<script src="js/slideShow.js" defer></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/ancora.js"></script>
     <title>Games Store</title>
 </head>
 <body>
     <header id="header">
 		<div class="container-logo">
-			<img src="img/icons/logo.png">
+			<img src="img/icons/logo-loja.png">
 		</div>
 		<nav id="menu">
 			<ul id="menu-list">
-				<li>Inicio</li>
-				<li>Sobre</li>
-				<li>Lojas</li>
-				<li>Promoções</li>
-				<li>Destaque</li>
-				<li>Contatos</li>
+				<li><a href="#banner">Inicio</a></li>
+				<li><a href="#empresa">Sobre</a></li>
+				<li><a href="#produtos">Lojas</a></li>
+				<li><a href="#promo">Promoções</a></li>
+				<li><a href="#separador">Destaque</a></li>
+				<li><a href="#contato">Contatos</a></li>
 			</ul>
 		</nav>
 		<div class="container-redes">
@@ -185,7 +187,8 @@
 		</div>
     </main>
     <section id="empresa">
-		<div class="container-centralizar display-row">
+		<div class="container-centralizar display-row relative">
+			
 			<div class="container-sobre">
 				<div class="titulo">
 					<h1>Lorem ipsum <span class="destaque">mauris</span></h1>
@@ -196,14 +199,15 @@
 					</p>
 				</div>
 			</div>
-			<div class="container-img-empresa"></div>
+			<div class="container-img-sobre">
+				<img src="img/Banner/loja.jpg">
+			</div>
 		</div>
     </section>
+	
 	<section id="promo">
-		<div class="container-centralizar">
-			<div class="container-titulo">
-				<h1>Confira nossos Destaques</h1>
-			</div>
+		<div class="container-centralizar gap" >
+			<h1>Lorem ipsum <span class="destaque">mauris</span></h1>
 			<div class="container-produtos">
 				<div class="card-produto">				
 					<img src="img/jogos/diablo3.jpg" alt="">
@@ -264,12 +268,10 @@
 			</div>
 		</div>
 	</section>
+	<section id="separador">
+		<h1>-- NEW RELEASE --</h1>
+	</section>
 	<section id="destaque">
-		<div class="container-centralizar">
-			<div class="container-titulo">
-				<h1>Confira nossos Destaques</h1>
-			</div>
-			<div class="container-destaque">
 				<div class="card-destaque">
 					<img src="img/jogos/battlefield.jpg" >
 				</div>
@@ -282,14 +284,21 @@
 				<div class="card-destaque">
 					<img src="img/jogos/cyberpunk.jpeg">
 				</div>
-			</div>
-		</div>
 	</section>
 	<section id="contato">
-		<div class="container-centralizar">
+		<div class="container-centralizar display-row">
+			<div class="container-imagem-contato">
+				<img src="img/icons/logo-loja.png">
+			</div>
 			<div class="container-lojas">
-				<div class="container-titulo">
-					<h1>Confira nossos Destaques</h1>
+				<div class="card-loja">
+					<div class="nome-loja">dasdasdsa</div>
+					<div class="imagem-loja"></div>
+				</div>
+				
+				<div class="card-loja">
+					<div class="nome-loja">dasdasdsa</div>
+					<div class="imagem-loja"></div>
 				</div>
 			</div>
 			<div class="container-contato">
