@@ -648,6 +648,14 @@ p{
 	position: relative;
     border: solid 3px #6f37b8;
 }
+.redes{
+    width: 480px;
+    height: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+/*    background-color: aqua;*/
+}
 .email::before,
 .nome::before,
 .celular::before{
@@ -661,11 +669,13 @@ p{
 	background-color: #6f37b8;
     position: absolute;
 }
-.email::before{
+.nome::before{
     content: url(../img/icons/nome.png);
-}.nome::before{
+}
+.email::before{
     content: url(../img/icons/email.png);
-}.celular::before{
+}
+.celular::before{
     content: url(../img/icons/celular.png);
 }
 .container-contato form .email::before{
@@ -678,7 +688,7 @@ p{
     padding-left: 70px;
 }
 .container-contato form div input[type=text]:focus{
-    background-color: #b4cddb;
+    background-color: #cce9ff;
 }
 .btn-enviar{
     width: 200px;
