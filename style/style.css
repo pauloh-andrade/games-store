@@ -33,7 +33,7 @@ body{
 h1,h3,p{
 	font-family:  'roboto', sans-serif;
 	color: var(--cor-font-main);
-	font-size: 2.7rem;
+	font-size: 2.6rem;
 	font-weight: 100;
 	width:auto;
 	height: auto;
@@ -371,7 +371,7 @@ p{
 	border-radius: 5px 5px 0px 0px;
 	object-fit: cover;
 }
-.card-produto .hr-card{
+.hr-card{
 	width: 100%;
 	height: 8px;
 	background-image: linear-gradient(to left, var(--cor-destaque), #004cff,#b225c2);
