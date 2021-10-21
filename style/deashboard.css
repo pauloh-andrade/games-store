@@ -71,7 +71,7 @@ body{
     border-radius: 5px;
     margin-left: auto;
     margin-top: 30px;
-    box-shadow: 0px 0px 10px #0009;
+    /* box-shadow: 0px 0px 10px #0009; */
 	cursor: pointer;
 	font-family: calibri;
 	font-weight: bold;
@@ -169,7 +169,7 @@ nav{
 }
 .logout div{
     margin-left: auto;
-    box-shadow: 0px 0px 5px #000;
+    /* box-shadow: 0px 0px 5px #000; */
 
 }
 main{
@@ -191,7 +191,9 @@ main{
     padding: 40px;
     display: flex;
     flex-direction: column;
+    /* border: 1px solid var(--cor-borda); */
     box-shadow: 0px 0px 10px #000;
+
 }
 #lista-categoria{
     width: 400px;
@@ -209,7 +211,7 @@ footer{
     width: 100vw;
     height: 90px;
     background-color: #121212;
-    box-shadow: 0px 0px 10px #000;
+    /* box-shadow: 0px 0px 10px #000; */
     border: 1px solid var(--cor-borda);
     margin-top: auto;
     display: flex;

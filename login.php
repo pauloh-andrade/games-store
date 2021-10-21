@@ -15,7 +15,7 @@
                 <div class="itens">
                     <input class="campo-txt" placeholder="Login" type="text">
                     <input class="campo-txt" placeholder="Senha" type="password">
-                    <a href="deashboard.html">
+                    <a href="deashboard.php">
                     <input class="btn-form"type="button" value="Logar">
                     </a>
                     <p>- Games Store - </p>

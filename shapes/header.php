@@ -1,6 +1,6 @@
         <header>
             <div class="titulo">
-                <a href="deashboard.html">
+                <a href="deashboard.php">
                     <div class="nome-projeto">
                         <h1>C M S</h1>
                         <p class="txt-background">

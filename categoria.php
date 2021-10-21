@@ -1,3 +1,10 @@
+<?php
+    require_once('bd/conexaoMyslq.php');
+
+    $conexao = conexaoMysql();
+    var_dump($conexao);
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,10 +23,10 @@
             <div id="categoria">
                 <h1>Cadastro de Categorias</h1>
                 <div class="hr-title"></div>
-                <form id="form-categoria">
+                <form id="form-categoria" action="controller/cadastroCategoria.php" name="formCategoria" method="POST">
                     <p>Categoria:</p>
-                    <input type="text" class="campo-txt" placeholder="Digite o nome da categoria"/>
-                    <input type="button" class="btn-form" value="Salvar"/>
+                    <input type="text" class="campo-txt" placeholder="Digite o nome da categoria" name="txtCategoria"/>
+                    <input type="submit" class="btn-form" value="Salvar" name="btnCategoria"/>
                 </form>
             </div>
             <div id="lista-categoria">

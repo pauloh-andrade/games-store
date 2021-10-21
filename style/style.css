@@ -33,7 +33,7 @@ body{
 h1,h3,p{
 	font-family:  'roboto', sans-serif;
 	color: var(--cor-font-main);
-	font-size: 2.6rem;
+	font-size: 2.2rem;
 	font-weight: 100;
 	width:auto;
 	height: auto;
@@ -379,8 +379,8 @@ p{
 	margin-top: 0px;
 }
 .hr-title{
-	width: 100px;
-	height: 10px;
+	width: 80px;
+	height: 8px;
 	background-image: linear-gradient(to left, var(--cor-destaque), #004cff,#b225c2);
 	border-radius: 10px;
 }
