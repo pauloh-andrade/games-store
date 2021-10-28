@@ -4,7 +4,7 @@
  * Data: 21/10/2021
  * Responsável: Paulo Henrique
  * *********************************************************************************/
- require_once('config/config.php');
+// require_once('/config/config.php');
 
  //criando função que abre conexão com o banco
  function conexaoMysql(){
