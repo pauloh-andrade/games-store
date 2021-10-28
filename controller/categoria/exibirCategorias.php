@@ -6,7 +6,7 @@
 ******************************************************************************/
 
 //import do arquivo de selec da Categoria
-require_once(SRC . "/bd/select.php");
+require_once(SRC . "/bd/categoria/select.php");
 
 //função para exibir categoria
 function exibirCategoria(){

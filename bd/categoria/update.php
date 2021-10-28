@@ -4,10 +4,10 @@
 * Paulo Henrique
 * 23/10/2021
 ********************************************************************************/
-require_once("conexaoMysql.php");
+require_once(SRC."/bd/conexaoMysql.php");
 
 function updateCategoria($id,$categoria){
-    $sql = "update tbl_categoria set categoria = '".$categoria."' where id_categoria =". $id;
+    $sql = "update tbl_categoria set nome = '".$categoria."' where id_categoria =". $id;
     
     //chamando conexão com o banco
     $conexao = conexaoMysql();

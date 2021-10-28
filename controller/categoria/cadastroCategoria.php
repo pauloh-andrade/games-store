@@ -5,11 +5,11 @@
 * 23/10/2021
 *****************************************************************/
     //importando arquivo de config
-    require_once("../config/config.php");
+    require_once("../../config/config.php");
     //importantando arquivo de interação com banco
-    require_once("../bd/inserir.php");
+    require_once("../../bd/categoria/inserir.php");
     //importando arquivo de update
-    require_once("../bd/update.php");
+    require_once("../../bd/categoria/update.php");
     
     //Verificando se o request encaminhado é == a POST através da função $_SERVER
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -22,7 +22,7 @@
             if(insertCategoria($categoria)){
                 echo("<script>
                         alert('Categoria inserida com sucesso');
-                        window.location.href = '../categoria.php';
+                        window.location.href = '../../categoria.php';
                     </script>");
             }
             else{
@@ -37,7 +37,7 @@
                 if(updateCategoria($id,$categoria)){
                     echo("<script>
                             alert('Categoria inserida com sucesso');
-                            window.location.href = '../categoria.php';
+                            window.location.href = '../../categoria.php';
                         </script>");
                 }
                 else{

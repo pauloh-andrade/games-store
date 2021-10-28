@@ -45,10 +45,12 @@
                     <img src="img/icons/contato.png">
                     <p>Contatos</p>
                 </div>
-                <div class="item-cms">
-                    <img src="img/icons/nome.png">
-                    <p>Usuários</p>
-                </div>
+                <a href="usuarios.php">
+                    <div class="item-cms">
+                        <img src="img/icons/nome.png">
+                        <p>Usuários</p>
+                    </div>
+                </a>
             </div>
             <div class="logout">
                  <div class="item-cms">

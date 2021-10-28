@@ -1,12 +1,25 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-color: #0a0a0a;
+    background-color: #0a0c1a;
     display: flex;
     align-items: center;
 /*    background-image: url(../img/Banner/back.jpg);*/
     background-size: cover;
     background-repeat: no-repeat;
+}
+/*Estilizando scroll bar*/
+::-webkit-scrollbar{
+    width: 17px;
+}
+::-webkit-scrollbar-track{
+    background: #2d214a;
+}
+::-webkit-scrollbar-thumb{
+	background-color: #6e27ca;
+	border-radius: 20px;
+	border: 3px solid #2d214a;
+	
 }
 .icons-bd{
     filter: brightness(50%);
@@ -57,40 +70,55 @@ body{
 .campo-txt{
     width: 100%;
     height: 50px;
-    background-color: #121212;
-    border-bottom: 2px solid var(--cor-borda);
+    background-color: #1a1d3d;
+    border: 2px solid #2d3268;
     font-size: 1.7rem;
+    border-radius: 3px;
+    padding-left: 15px;
     color: var(--cor-font-main);
+    position: relative;
 }
 .campo-txt:focus{
-    border-bottom: 2px solid var(--cor-secundaria);
-    background-color: #161616;
+    border: 1px solid #1a1d3d;
+    /* background-color: #161616; */
+    
+}
+.categoria-txt{
+    content: url(../img/icons/categoria.png);
+	width: 49px;
+    height: 49px;
+    margin-top: 0px;
+    border-radius: 0px 3px 3px 0px;
+	padding: 4px;
+    box-sizing: border-box;
+    position: absolute;
+    margin-left: 443px;
+	background-color: #6f37b8;
 }
 .btn-form{
     width: 100%;
     height: 50px;
-    background-color: transparent;
-    border: 2px solid var(--cor-secundaria);
+    background-image: linear-gradient(to left,#3719c9,#8f17ff);
+    /* background-color: #8f17ff; */
     border-radius: 5px;
     margin-left: auto;
     margin-top: 30px;
     /* box-shadow: 0px 0px 10px #0009; */
 	cursor: pointer;
-	font-family: calibri;
-	font-weight: bold;
-	color: #6f37b8;
-	font-size: 1.7rem;
+	font-family:'Roboto';
+	font-weight: 200;
+	color: rgba(221, 221, 221, 0.747);
+	font-size: 1.5rem;
 }
 .btn-form:hover{
-    background-color: var(--cor-secundaria);
     transition: all .4s;
-    color: #121212;
+    transform: scale(1.03);
     border: 0;
 }
 header{
     width: 100vw;
     height:150px;
-    background-color:#121212;
+    background-color:#0f1124;
 	border: 1px solid var(--cor-borda);
     padding: 10px;
     display: flex;
@@ -127,14 +155,14 @@ header .titulo{
 }
 .hr-dash{
 	width: 100%;
-	height: 3px;
+	height: 5px;
 	background-image: linear-gradient(to left, var(--cor-destaque), #004cff,#b225c2);
 }
 nav{
     width: 100%;
     height: 100px;
-    background-color: #121212;
-	border: 1px solid var(--cor-borda);
+    background-color: #0f1124;
+	/* border: 1px solid var(--cor-borda); */
      margin-bottom: 10px;
     display: flex;
     justify-content: space-around;
@@ -152,6 +180,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     transition: all .3s;
 }
 .item-cms:hover{
@@ -161,10 +190,11 @@ nav{
     box-shadow: 0;
 }
 .logout div{
-    background-color: #0a0a0a;
+    background-color: #0a0c1a;
+    
 }
 .item-cms img{
-    width: 40px;
+    width: 35px;
 }
 .logout{
     width: 200px;
@@ -188,36 +218,44 @@ main{
 }
 #categoria,#lista-categoria{
     width: 550px;
-    height: 490px;
-    background-color: #121212;
-    border-radius: 10px;
+    height: 400px;
+    background-color: #0f1124;
+    border-radius: 3px;
     margin-right: 10px;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
 /*     border: 1px solid var(--cor-borda); */
-    box-shadow: 0px 0px 10px #0007;
+    box-shadow: 0px 0px 10px #0003;
     
 
 }
 #lista-categoria{
     width: 400px;
+    
+}
+#scroll{
+    margin-top: 10px;
+    overflow: auto;
+   
 }
 .categoria-item{
     width: 100%;
-    height: 50px;
-    border-bottom: 2px solid var(--cor-borda);
+    height: 37px;
+    border-bottom: 2px solid  #2d3268;
     display: flex;
     align-items: flex-end;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     justify-content: space-between;
+    padding-right: 15px;
+    
 }
 footer{
     width: 100vw;
     height: 90px;
-    background-color: #121212;
+    background-color: #0f1124;
     /* box-shadow: 0px 0px 10px #000; */
-    border: 1px solid var(--cor-borda);
+    /* border: 1px solid var(--cor-borda); */
     margin-top: auto;
     display: flex;
     flex-direction: column;

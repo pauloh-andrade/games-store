@@ -2,13 +2,13 @@
     session_start();
     require_once("config/config.php");
     require_once("bd/conexaoMysql.php");
-    require_once(SRC . "controller/exibirCategorias.php");
+    require_once(SRC . "controller/categoria/exibirCategorias.php");
 
     $categoria = (string) null;
     $modo = (String) "Salvar";
     $id = null;
     if(isset($_SESSION['categoria'])){
-        $categoria = $_SESSION['categoria']['categoria'];
+        $categoria = $_SESSION['categoria']['nome'];
         $id = $_SESSION['categoria']['id_categoria'];
         $modo = "Atualizar";
         
@@ -33,15 +33,15 @@
             <div id="categoria">
                 <h1>Cadastro de Categorias</h1>
                 <div class="hr-title"></div>
-                <form id="form-categoria" action="controller/cadastroCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="formCategoria" method="POST">
-                    <p>Categoria:</p>
+                <form id="form-categoria" action="controller/categoria/cadastroCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="formCategoria" method="POST">
                     <input type="text" class="campo-txt" placeholder="Digite o nome da categoria" name="txtCategoria" value="<?=$categoria?>"/>
+                    <div class="categoria-txt"></div>
                     <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
                 </form>
             </div>
             <div id="lista-categoria">
                 <h1>Categorias</h1>
-                <div class="hr-title"></div>
+                <div class="hr-title"> <br></div>
                 <?php
                     //recebendo array categorias
                     $categorias = exibirCategoria();
@@ -50,20 +50,22 @@
                     while($rsCategorias = mysqli_fetch_assoc($categorias)){
                 
                 ?>
-                <div class="categoria-item">
-                    <p><?=$rsCategorias['categoria']?></p>
-                    <div>
-                    <a href="controller/editarCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
-                        <img src="img/icons/edit.png" class="icons-bd">
-                    </a>
-                    <a href="controller/excluirCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
-                        <img src="img/icons/delete.png" class="icons-bd">
-                    </a>
-                   </div>
-                </div> 
+                <div id="scroll">
+                    <div class="categoria-item">
+                        <p><?=$rsCategorias['nome']?></p>
+                        <div>
+                        <a href="controller/categoria/editarCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
+                            <img src="img/icons/edit.png" class="icons-bd">
+                        </a>
+                        <a href="controller/categoria/excluirCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
+                            <img src="img/icons/delete.png" class="icons-bd">
+                        </a>
+                    </div>
+                    </div> 
                 <?php
                     }
                 ?>
+                </div>
             </div>
         </main>
         <?php

@@ -4,7 +4,7 @@
 * ass: Paulo Henrique
 * 23/10/2021
 ****************************************************************************/
-require_once("conexaoMysql.php");
+require_once(SRC."/bd/conexaoMysql.php");
 
 function deleteCategoria($idCategoria){
     $sql = "delete from tbl_categoria where id_categoria =" . $idCategoria;

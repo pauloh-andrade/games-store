@@ -5,12 +5,12 @@
 * 23/10/2021
 ******************************************************************/
 //importando arquivo de conexão com o banco
-require_once("conexaoMysql.php");
+require_once(SRC."/bd/conexaoMysql.php");
 
 //functin para inserir categoria no banco de dados
 function insertCategoria($categoria){
     $sql = "insert into tbl_categoria(
-        categoria
+        nome
     )
     values('".$categoria."')";
     
