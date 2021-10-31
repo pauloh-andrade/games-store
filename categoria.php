@@ -30,16 +30,16 @@
             require_once("shapes/header.php");
         ?>
         <main class="display-row">
-            <div id="categoria">
+            <div id="container-main">
                 <h1>Cadastro de Categorias</h1>
-                <div class="hr-title"></div>
-                <form id="form-categoria" action="controller/categoria/cadastroCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="formCategoria" method="POST">
+                <div class="hr-title"><br></div>
+                <form class="form-deashboard" action="controller/categoria/cadastroCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="formCategoria" method="POST">
                     <input type="text" class="campo-txt" placeholder="Digite o nome da categoria" name="txtCategoria" value="<?=$categoria?>"/>
                     <div class="categoria-txt"></div>
                     <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
                 </form>
             </div>
-            <div id="lista-categoria">
+            <div id="container-lista">
                 <h1>Categorias</h1>
                 <div class="hr-title"> <br></div>
                 <?php

@@ -330,17 +330,17 @@
 			<div class="container-contato">
 				<h1>Entre em contato</h1>
 				<div class="hr-title"></div>
-				<form>
+				<form name="formContato" action="controller/contato/cadastroContato.php" method="POST">
 					<div class="nome">
-						<input type="text" placeholder="Digite seu nome" >
+						<input type="text" placeholder="Digite seu nome" name="txtNome">
 					</div>
 					<div class="email">
-						<input class="email"type="text" placeholder="Digite seu email">
+						<input class="email"type="text" placeholder="Digite seu email" name="txtEmail">
 					</div>
 					<div class="celular">
-						<input type="text" placeholder="Digite seu celular">
+						<input type="text" placeholder="Digite seu celular" name="txtNumero">
 					</div>
-                    <input class="btn-enviar" type="button" value="Enviar">
+                    <input class="btn-enviar" type="submit" value="Enviar">
 				</form>
                 <div class="redes">
                     <img src="img/icons/email.png" class="icons">
