@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         "nome" => $nome,
         "login" => $login,
         "senha" => $senha
+       
     );
     
     if(strtoupper($_GET['modo']) == "CADASTRAR"){

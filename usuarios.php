@@ -1,8 +1,9 @@
 <?php
     require_once("config/config.php");
-    require_once(SRC."/controller/usuarios/listarUsuario.php");
+    require_once(SRC."controller/usuarios/listarUsuario.php");
     $nome =(string)null;
     $login =(string)null;
+    $idUsuario = (int)null;
     $modo =(string) "Cadastrar";
     session_start();
     if(isset($_SESSION['usuario'])){
@@ -30,7 +31,7 @@
             <div id="container-main">
                 <h1>Cadastro de Usuários</h1>
                 <div class="hr-title"> <br></div>
-                <form  class="form-deashboard" name="formUsers" action="controller/usuarios/cadastroUsuarios.php?modo=<?=$modo?>&id=<?=$idUsuario?>"  method="post">
+                <form  class="form-deashboard" name="formUsers" action="controller/usuarios/cadastroUsuarios.php?modo=<?=$modo?>&id=<?=$idUsuario?>"  method="POST">
                     <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" value="<?=$nome?>"/>
                     <input type="text" class="campo-txt" placeholder="Login" name="txtLogin" value="<?=$login?>"/>
                     <input type="password" class="campo-txt" placeholder="Senha" name="txtSenha" value=""/>

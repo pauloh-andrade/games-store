@@ -13,5 +13,5 @@
 
 
 //declarando constante raiz
-define('SRC', $_SERVER['DOCUMENT_ROOT'] . '/Games-Store/');
+define('SRC', $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/paulo/Games-Store/');
 ?>

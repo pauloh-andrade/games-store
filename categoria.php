@@ -29,42 +29,43 @@
         <?php
             require_once("shapes/header.php");
         ?>
-        <main class="display-row">
+        <main class="">
             <div id="container-main">
-                <h1>Cadastro de Categorias</h1>
-                <div class="hr-title"><br></div>
-                <form class="form-deashboard" action="controller/categoria/cadastroCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="formCategoria" method="POST">
-                    <input type="text" class="campo-txt" placeholder="Digite o nome da categoria" name="txtCategoria" value="<?=$categoria?>"/>
-                    <div class="categoria-txt"></div>
-                    <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
-                </form>
-            </div>
-            <div id="container-lista">
-                <h1>Categorias</h1>
-                <div class="hr-title"> <br></div>
-                <?php
-                    //recebendo array categorias
-                    $categorias = exibirCategoria();
+                <div class="cadastro-categoria">
+                    <h1>Cadastro de Categorias</h1>
+                    <div class="hr-title"><br></div>
+                    <form class="form-deashboard" action="controller/categoria/cadastroCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="formCategoria" method="POST">
+                        <input type="text" class="campo-txt" placeholder="Digite o nome da categoria" name="txtCategoria" value="<?=$categoria?>"/>
+                        <div class="categoria-txt"></div>
+                        <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
+                    </form>
+                </div>
+                <div class="listar-categoria">
+                    <h1>Categorias</h1>
+                    <div class="hr-title"> <br></div>
+                    <div class="categorias">
+                    <?php
+                        //recebendo array categorias
+                        $categorias = exibirCategoria();
                     
-                    //utilizando fetch assoc para administrar while e array
-                    while($rsCategorias = mysqli_fetch_assoc($categorias)){
-                
-                ?>
-                <div id="scroll">
-                    <div class="categoria-item">
-                        <p><?=$rsCategorias['nome']?></p>
-                        <div>
-                        <a href="controller/categoria/editarCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
-                            <img src="img/icons/edit.png" class="icons-bd">
-                        </a>
-                        <a href="controller/categoria/excluirCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
-                            <img src="img/icons/delete.png" class="icons-bd">
-                        </a>
-                    </div>
-                    </div> 
-                <?php
-                    }
-                ?>
+                        //utilizando fetch assoc para administrar while e array
+                        while($rsCategorias = mysqli_fetch_assoc($categorias)){               
+                    ?>
+                    
+                        <div class="categoria-item">
+                            <p><?=$rsCategorias['nome']?></p>
+                            <div>
+                                <a href="controller/categoria/editarCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
+                                    <img src="img/icons/edit.png" class="icons-bd">
+                                </a>
+                                <a href="controller/categoria/excluirCategoria.php?id=<?=$rsCategorias['id_categoria']?>">
+                                    <img src="img/icons/delete.png" class="icons-bd">
+                                </a>
+                            </div>
+                        </div> 
+                     <?php
+                     }
+                     ?>
                 </div>
             </div>
         </main>

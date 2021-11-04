@@ -31,10 +31,12 @@
                         <p>Categorias</p>
                     </div>
                 </a>
-                <div class="item-cms">
-                    <img src="img/icons/contato.png">
-                    <p>Contatos</p>
-                </div>
+                <a href="contato.php">
+                    <div class="item-cms">
+                        <img src="img/icons/contato.png">
+                        <p>Contatos</p>
+                    </div>
+                </a>
                 <a href="usuarios.php">
                     <div class="item-cms">
                         <img src="img/icons/nome.png">
