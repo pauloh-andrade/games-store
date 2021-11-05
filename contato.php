@@ -18,12 +18,13 @@
             <div id="container-contato">
                 <h1>Usuários</h1>
                 <div class="hr-title"> <br></div>
-                <div id="scroll">
+                <div>
                     <table class="tbl-contato">
-                        <tr class="linha">
-                            <td class="coluna"><p>Nome</p></td>
-                            <td class="coluna"><p>Email</p></td>
-                            <td class="coluna"><p>Numero</p></td>
+                        <tr class="linha-titulo">
+                            <td class="coluna-titulo"><p>Nome</p></td>
+                            <td class="coluna-titulo"><p>Email</p></td>
+                            <td class="coluna-titulo"><p>Numero</p></td>
+                            <td class="coluna-titulo"></td>
                         </tr>
                         <?php
                             $dadosContato = listarContato();
@@ -33,7 +34,7 @@
                             <td class="coluna"><p><?=$rsContato['nome']?></p></td>
                             <td class="coluna"><p><?=$rsContato['email']?></p></td>
                             <td class="coluna"><p><?=$rsContato['numero']?></p></td>
-                            <td>
+                            <td class="coluna">
                                 <a href="controller/contato/excluirContato.php?id=<?=$rsContato['id_contato']?>">
                                     <img src="img/icons/delete.png" class="icons-bd">
                                 </a>

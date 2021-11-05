@@ -27,7 +27,7 @@ p{
 }
 .icons-bd{
     width: 20px;
-    filter: brightness(50%);
+    filter: brightness(70%);
 }
 .icons-bd:hover{
     filter: brightness(100%);
@@ -79,8 +79,8 @@ p{
 .campo-txt{
     width: 490px;
     height: 50px;
-    background-color: #202344;
-/*    border: 2px solid #2d3268;*/
+    background-color: #111418;
+    border: 1px solid #16191f;
     font-size: 1.5rem;
     border-radius: 3px;
     padding-left: 15px;
@@ -243,11 +243,11 @@ main{
     display: flex;
     justify-content: center;
     gap: 30px;
-    /* background-color: aliceblue; */
+/*     background-color: aliceblue; */
 }
 .cadastro-categoria,.listar-categoria{
     width: 560px;
-    /* background-color: aqua; */
+/*     background-color: aqua; */
     height: auto;
 }
 .listar-categoria{
@@ -256,7 +256,7 @@ main{
 .categorias{
     width: 490px;
     height: auto;
-    /* background-color: blue; */
+/*     background-color: blue; */
     display: flex;
     flex-wrap: wrap;
    margin-top: 20px; 
@@ -267,7 +267,8 @@ main{
     
 }
 #container-contato{
-    width: 700px
+    width: 700px;
+    height: 400px;
 }
 
 .categoria-item{
@@ -287,6 +288,10 @@ main{
     transition: all .4s;
     cursor:default;
     background-color: rgb(92, 76, 184);
+   
+}
+.categoria-item:hover > p{
+     color: white;
 }
 .categoria-item div{
     
@@ -310,9 +315,24 @@ main{
 }
 .tbl-contato{
     width: 100%;
+    margin-top: 50px;
+    border-spacing: 0;
+    border: solid 1px #111418;
+/*    border: 1px solid #c0c0c0;*/
 }
 .linha{
     height: 40px;
+}
+.linha-titulo{
+    height: 40px;
+    background-color: rgb(92, 76, 184);
+}
+.coluna,.coluna-titulo{
+    border: solid 1px #111418;
+    padding-left: 10px;
+}
+.coluna-titulo{
+    border: 0;
 }
 footer{
     width: 100vw;
