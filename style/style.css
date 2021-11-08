@@ -75,6 +75,11 @@ p{
 	flex-direction: row;
 	justify-content: center;
 }
+.display-column{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 .gap{
 	gap: 50px;
 }

@@ -16,7 +16,7 @@
         ?>
         <main class="display-row">
             <div id="container-contato">
-                <h1>Usuários</h1>
+                <h1>Contatos</h1>
                 <div class="hr-title"> <br></div>
                 <div>
                     <table class="tbl-contato">

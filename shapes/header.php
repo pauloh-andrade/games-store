@@ -21,10 +21,12 @@
         <div class="hr-dash"></div>
         <nav>
             <div class="menu-cms">
-                <div class="item-cms">
-                    <img src="img/icons/carrinho.png">
-                    <p>Produtos</p>
-                </div>
+                <a href="produto.php">
+                    <div class="item-cms">
+                        <img src="img/icons/carrinho.png">
+                        <p>Produtos</p>
+                    </div>
+                </a>
                 <a href="categoria.php">
                     <div class="item-cms">
                         <img src="img/icons/categoria.png">

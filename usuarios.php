@@ -28,7 +28,7 @@
             require_once("shapes/header.php");
         ?>
         <main class="display-row">
-            <div id="container-main">
+            <div class="container-main">
                 <div class="cadastro-categoria">
                     <h1>Cadastro de Usuários</h1>
                     <div class="hr-title"> <br></div>

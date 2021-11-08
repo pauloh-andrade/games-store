@@ -1,6 +1,6 @@
 body{
     width: 100vw;
-    height: 100vh;
+    height: ;
     background-color: #0a0d11;
     display: flex;
     align-items: center;
@@ -139,6 +139,7 @@ header{
      margin-bottom: 0px;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 header .titulo{
     width: 400px;
@@ -229,19 +230,22 @@ main{
      margin-bottom: 10px;
      /* background-color: aqua; */
      /* flex-grow: ; */
-     display: flex;
-     justify-content: center;
-     align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    
      /* flex-direction: column; */
 /*    background-image: url(../img/Banner/ba.jpg);*/
 }
-#container-main{
+.container-main{
     width: 80%;
     max-width: 1900px;
-    min-height: 300px;
+    height: auto;
     /* padding:; */
     display: flex;
     justify-content: center;
+    flex-direction: row;
     gap: 30px;
 /*     background-color: aliceblue; */
 }
@@ -262,13 +266,27 @@ main{
    margin-top: 20px; 
    gap: 5px;  
 }
+#demo-image{
+    width: inherit;
+    height: 235px;
+/*    background-color: brown;*/
+    margin-top: 105px;
+}
+#demo-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
 #container-lista{
     width: 400px;
     
 }
 #container-contato{
-    width: 700px;
-    height: 400px;
+    min-width: 700px;
+    max-width: auto;
+    height: auto;
+/*    background-color: aqFconua;*/
+/*    background-color: ua;*/
 }
 
 .categoria-item{
