@@ -42,7 +42,7 @@
             <div class="listar-categoria">
                 <h1>Usuários</h1>
                 <div class="hr-title"> <br></div>
-                   <table class="tbl-contato">
+                   <table class="tbl-usuario">
                         <tr class="linha-titulo">
                             <td class="coluna-titulo"><p>Nome</p></td>
                             <td class="coluna-titulo"><p>login</p></td>

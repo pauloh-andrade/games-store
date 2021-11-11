@@ -239,7 +239,7 @@ main{
 /*    background-image: url(../img/Banner/ba.jpg);*/
 }
 .container-main{
-    width: 80%;
+    width: inherit;
     max-width: 1900px;
     height: auto;
     /* padding:; */
@@ -247,7 +247,7 @@ main{
     justify-content: center;
     flex-direction: row;
     gap: 30px;
-/*     background-color: aliceblue; */
+    /* background-color: aliceblue; */
 }
 .cadastro-categoria,.listar-categoria{
     width: 560px;
@@ -271,11 +271,39 @@ main{
     height: 235px;
 /*    background-color: brown;*/
     margin-top: 105px;
+    margin-bottom: 30px;
+    background-color: #111418;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #demo-image img{
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     border-radius: 4px;
+    filter: brightness(40%);
+}
+.input-file{
+    width: auto;
+    height: 50px;
+    padding: 10px;
+    color: rgb(92, 76, 184);
+    margin-top: 50px;
+    cursor: pointer;
+    border: 2px solid rgb(92, 76, 184);
+    border-radius: 3px;
+    font-family:'Roboto';
+	font-weight: 200;
+}
+.input-file:hover{
+    background-color:rgb(92, 76, 184) ;
+    border: 0;
+    color:#0a0d11;
+    font-weight: 600;
+}
+#imgJogo{
+    display: none;
 }
 #container-lista{
     width: 400px;
@@ -331,12 +359,14 @@ main{
     width: 20%;
 /*    background-color: aqua;*/
 }
-.tbl-contato{
-    width: 100%;
+.tbl-contato,.tbl-usuario{
+    width: 900px;
     margin-top: 50px;
     border-spacing: 0;
     border: solid 1px #111418;
-/*    border: 1px solid #c0c0c0;*/
+}
+.tbl-usuario{
+    width: 400px;
 }
 .linha{
     height: 40px;
@@ -352,6 +382,7 @@ main{
 .coluna-titulo{
     border: 0;
 }
+
 footer{
     width: 100vw;
     height: 90px;

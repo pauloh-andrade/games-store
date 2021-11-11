@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         else{
             echo("<script>
                     alert('Falha ao editar Usuário');
-//                    window.history.back();
+                    window.history.back();
                 </script>");
         }
     }

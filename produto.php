@@ -1,6 +1,22 @@
 <?php
-
-
+    require_once("controller/produto/listarProduto.php");
+    $nome = (string) null;
+    $preco = (string) null;
+    $descricao = (string) null;
+    $desconto = (string) null;
+    $idProduto = (string) null;
+    $modo = (string) "Cadastrar";
+    // $nome = (string) null;
+    session_start();
+    if(isset($_SESSION['produto'])){
+        $idProduto = $_SESSION['produto']['id_produto'];
+        $nome = $_SESSION['produto']['nome'];
+        $preco = $_SESSION['produto']['preco'];
+        $descricao = $_SESSION['produto']['descricao'];
+        $desconto = $_SESSION['produto']['desconto'];
+        $modo = (string) "Atualizar";
+        unset($_SESSION['produto']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,24 +32,30 @@
             require_once("shapes/header.php");
         ?>
         <main class="display-column">
-            <div class="container-main">
-                <div class="cadastro-categoria">
-                    <h1>Cadastro de Produtos</h1>
-                    <div class="hr-title"> <br></div>
-                    <form class="form-deashboard" name="formProduct">
-                         <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" value=""/>
-                        <input type="text" class="campo-txt" placeholder="Preço" name="txtLogin" value=""/>
-                        <input type="password" class="campo-txt" placeholder="Descrição" name="txtSenha" value=""/>
-                        <input type="password" class="campo-txt" placeholder="Desconto" name="txtSenha" value=""/>
-                        <input type="submit" class="btn-form" value="Cadastrar" name="btnCategoria"/>
-                    </form>
-                </div>
-                <div class="listar-categoria">
-                    <div id="demo-image">
-                        <img src="img/jogos/battlefield.jpg" width="40px">
+            
+            <form name="formProduct" action="controller/produto/cadastroProduto.php?id=<?=$idProduto?>&modo=<?=$modo?>" method="POST">
+                <div class="container-main">
+                    <div class="cadastro-categoria">
+                        <h1>Cadastro de Produtos</h1>
+                        <div class="hr-title"> <br></div>
+                            <div class="form-deashboard">
+                                <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" value="<?=$nome?>"/>
+                                <input type="text" class="campo-txt" placeholder="Preço" name="txtPreco" value="<?=$preco?>"/>
+                                <input type="text" class="campo-txt" placeholder="Descrição" name="txtDescricao" value="<?=$descricao?>"/>
+                                <input type="text" class="campo-txt" placeholder="Desconto" name="txtDesconto" value="<?=$desconto?>"/>
+                                <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
+                            </div>
+                    </div>
+                    <div class="listar-categoria">
+                        <div id="demo-image">
+                            <img src="img/icons/camera.png">
+                        </div>
+                        <label class="input-file" for="imgJogo">Selecione uma Imagem</label>
+                        <input name="fileFoto" id="imgJogo" type="file">
                     </div>
                 </div>
-            </div>
+            </form>
+            
 
             <div class="container-main">
                 <div id="container-contato">
@@ -49,46 +71,30 @@
                                 <td class="coluna-titulo"><p>Imagem</p></td>
                                 <td class="coluna-titulo"><p></p></td>
                             </tr>
+                            <?php
+                                $dadosProdutos = listarProdutos();
+                                //similar a foreach, percorre array
+                                while($rsProduto=mysqli_fetch_assoc($dadosProdutos)){
+                            ?>
                             <tr class="linha">
-                                <td class="coluna"><p>Conter Strike</p></td>
-                                <td class="coluna"><p>20.00</p></td>
-                                <td class="coluna"><p>dasdasdasdasdsadasdasdasdasdasdasdadadaasdaas</p></td>
-                                <td class="coluna"><p>10%</p></td>
-                                <td class="coluna"><img src="img/jogos/battlefield.jpg" width="100px"></td>
-                                <td class="coluna">
-                                    <img src="img/icons/delete.png" class="icons-bd">
+                                <td class="coluna-titulo"><p><?=$rsProduto['nome']?></p></td>
+                                <td class="coluna-titulo"><p><?=$rsProduto['preco']?></p></td>
+                                <td class="coluna-titulo"><p><?=$rsProduto['descricao']?></p></td>
+                                <td class="coluna-titulo"><p><?=$rsProduto['desconto']?></p></td>
+                                <td class="coluna-titulo"><p>"Imagem"</p></td>
+                                <td class="coluna-titulo">
+                                    <a href="controller/produto/editarProduto.php?id=<?=$rsProduto['id_produto']?>">
+                                        <img src="img/icons/edit.png" class="icons-bd">
+                                    </a>
+                                    <a href="controller/produto/excluirProduto.php?id=<?=$rsProduto['id_produto']?>">
+                                        <img src="img/icons/delete.png" class="icons-bd">
+                                    </a>
                                 </td>
+                                
                             </tr>
-                            <tr class="linha">
-                                <td class="coluna"><p>Conter Strike</p></td>
-                                <td class="coluna"><p>20.00</p></td>
-                                <td class="coluna"><p>dasdasdasdasdsadasdasdasdasdasdasdadadaasdaas</p></td>
-                                <td class="coluna"><p>10%</p></td>
-                                <td class="coluna"><img src="img/jogos/battlefield.jpg" width="100px"></td>
-                                <td class="coluna">
-                                    <img src="img/icons/delete.png" class="icons-bd">
-                                </td>
-                            </tr>
-                            <tr class="linha">
-                                <td class="coluna"><p>Conter Strike</p></td>
-                                <td class="coluna"><p>20.00</p></td>
-                                <td class="coluna"><p>dasdasdasdasdsadasdasdasdasdasdasdadadaasdaas</p></td>
-                                <td class="coluna"><p>10%</p></td>
-                                <td class="coluna"><img src="img/jogos/battlefield.jpg" width="100px"></td>
-                                <td class="coluna">
-                                    <img src="img/icons/delete.png" class="icons-bd">
-                                </td>
-                            </tr>
-                            <tr class="linha">
-                                <td class="coluna"><p>Conter Strike</p></td>
-                                <td class="coluna"><p>20.00</p></td>
-                                <td class="coluna"><p>dasdasdasdasdsadasdasdasdasdasdasdadadaasdaas</p></td>
-                                <td class="coluna"><p>10%</p></td>
-                                <td class="coluna"><img src="img/jogos/battlefield.jpg" width="100px"></td>
-                                <td class="coluna">
-                                    <img src="img/icons/delete.png" class="icons-bd">
-                                </td>
-                            </tr>
+                            <?php
+                                }
+                            ?>
                         </table>
                     </div>
                 </div>
