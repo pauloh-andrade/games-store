@@ -15,13 +15,19 @@ function insertProduto($arrayProduto){
         nome,
         preco,
         descricao,
-        desconto
+        desconto,
+        destaque,
+        imagem,
+        gif_preview
     )
     values(
         '".$arrayProduto['nome']."',
         '".$arrayProduto['preco']."',
         '".$arrayProduto['descricao']."',
-        '".$arrayProduto['desconto']."'
+        '".$arrayProduto['desconto']."',
+        '".$arrayProduto['destaque']."',
+        '".$arrayProduto['imagem']."',
+        '".$arrayProduto['gif_preview']."'
     )";
     
     //abrindo conexão com o banco
@@ -32,6 +38,7 @@ function insertProduto($arrayProduto){
         return true;
     }
     else{
+        
         return false;
     }
 }

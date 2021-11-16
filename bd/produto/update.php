@@ -11,12 +11,14 @@ function updateProduto($arrayProduto){
                 nome= '".$arrayProduto['nome']."',
                 preco= '".$arrayProduto['preco']."',
                 descricao= '".$arrayProduto['descricao']."',
-                desconto= '".$arrayProduto['desconto']."'
+                desconto= '".$arrayProduto['desconto']."',
+                destaque= '".$arrayProduto['destaque']."',
+                imagem='".$arrayProduto['imagem']."',
+                gif_preview='".$arrayProduto['gif_preview']."'
                 
                 where id_produto =".$arrayProduto['id_produto'];
                 
     $conexao = conexaoMysql();
-    
     if(mysqli_query($conexao,$sql)){
         return true;
     }

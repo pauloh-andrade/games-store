@@ -13,5 +13,14 @@
 
 
 //declarando constante raiz
-define('SRC', $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/paulo/Games-Store/');
+define('SRC', $_SERVER['DOCUMENT_ROOT'] . '/Games-Store/');
+
+//Declarando constantes para Upload de arquivos
+const DIRETORIO_FILE = 'files/';
+//recebendo extensões permitidas em uma array
+$extensoesPermitidas = array ("image/png","image/jpg","image/jpeg");
+//recebendo array em uma contante
+define('EXTENSION_ALLOWED', $extensoesPermitidas);
+const TAMANHO_FILE = "5120";
+
 ?>

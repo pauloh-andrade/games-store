@@ -4,8 +4,25 @@
  *  Data: 11/11/2021
  *  Responsável: Paulo Henrique
  * *****************************************************************************/
+require_once("../../config/config.php");
 require_once("../../bd/produto/insert.php");
+require_once("../../bd/produto/select.php");
 require_once("../../bd/produto/update.php");
+require_once("../../bd/produtoCategoria/insert.php");
+require_once(SRC."functions/upload.php");
+
+
+
+$arrayCategorias = array();
+//percorrer array e se chave possuir "#categoria" resgatar elemento da array
+foreach($_POST as $array){
+    if(strpos($array,"#categoria") !== false){
+        $arrayCategorias[] = substr($array,11);
+    }
+}
+
+$destaque = (int) 0;
+
  //testando method
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //recebendo dados a serem cadastrados via post
@@ -14,26 +31,44 @@ require_once("../../bd/produto/update.php");
     $preco = $_POST['txtPreco'];
     $descricao = $_POST['txtDescricao'];
     $desconto = $_POST['txtDesconto'];
-    
+    if(isset($_POST['destaque'])){$destaque = $_POST['destaque'];}
+    $imagePreview = uploadFile($_FILES['preview']);
+    $imageBanner = uploadFile($_FILES['banner']);
+                                                  
 
     $produto = array(
         "id_produto" => $id,
         "nome" => $nome,
         "preco" => $preco,
         "descricao" => $descricao,
-        "desconto" => $desconto
+        "desconto" => $desconto,
+        "destaque" => $destaque,
+        "imagem" => $imageBanner,
+        "gif_preview" => $imagePreview
     );
 
     if(strtoupper($_GET['modo']) == "CADASTRAR"){
         if(insertProduto($produto)){
-            echo("<script>
+            //conectando categorias com produtos
+            $produto = selectUltimoProduto();
+            $rsProduto = mysqli_fetch_assoc($produto);
+            $idProdutoCadastrado = $rsProduto['id_produto'];
+            if(insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias)){
+                echo("<script>
                         alert('Produto cadastrado com sucesso');
                         window.location.href='../../produto.php';
                     </script>");
+            }
+            else{
+                echo("<script>
+                    alert('Falha ao cadastrar Produto');
+                    window.history.back();
+                </script>");
+            }
         }
         else{
             echo("<script>
-                    alert('Falha ao cadastrar Produto');
+                    alert('Falha ao cadastraar Produto');
                     window.history.back();
                 </script>");
         }
@@ -46,7 +81,6 @@ require_once("../../bd/produto/update.php");
                 </script>");
         }
         else{
-            die;
             echo("<script>
                     alert('Falha ao editar produto');
                    window.history.back();

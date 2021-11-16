@@ -1,12 +1,13 @@
 body{
-    width: 100vw;
-    height: ;
     background-color: #0a0d11;
     display: flex;
     align-items: center;
 /*    background-image: url(../img/Banner/back.jpg);*/
     background-size: cover;
     background-repeat: no-repeat;
+}
+input[type='file']{
+    display: none;
 }
 /*Estilizando scroll bar*/
 ::-webkit-scrollbar{
@@ -65,7 +66,7 @@ p{
 }
 .form-deashboard{
     margin-top: 30px;
-    padding: 30px;
+    padding: 30px 30px 0px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +77,14 @@ p{
 .form-deashboard .btn-form{
     margin-top: 10px;
 }
-.campo-txt{
+.submit-produtos{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.campo-txt,.text-area{
     width: 490px;
     height: 50px;
     background-color: #111418;
@@ -94,6 +102,11 @@ p{
     border: 2px solid #2d3268;
     /* background-color: #161616; */
     
+}
+.text-area{
+    width: inherit;
+    height: 100px;
+    margin-bottom: 20px;
 }
 .campo-txt::placeholder{
     color: rgb(168, 167, 167);
@@ -128,6 +141,10 @@ p{
     transition: all .4s;
     transform: scale(1.03);
     border: 0;
+}
+.btn-produto{
+    width: 200px;
+   margin-left: auto;
 }
 header{
     width: 100vw;
@@ -246,8 +263,8 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    gap: 30px;
-    /* background-color: aliceblue; */
+    gap: 10px;
+/*     background-color: aliceblue; */
 }
 .cadastro-categoria,.listar-categoria{
     width: 560px;
@@ -277,6 +294,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 #demo-image img{
     width: 200px;
@@ -285,16 +303,17 @@ main{
     filter: brightness(40%);
 }
 .input-file{
-    width: auto;
-    height: 50px;
+    width: 490px;
+    height: 40px;
     padding: 10px;
     color: rgb(92, 76, 184);
-    margin-top: 50px;
+    text-align: center;
     cursor: pointer;
     border: 2px solid rgb(92, 76, 184);
     border-radius: 3px;
     font-family:'Roboto';
 	font-weight: 200;
+
 }
 .input-file:hover{
     background-color:rgb(92, 76, 184) ;
@@ -316,7 +335,14 @@ main{
 /*    background-color: aqFconua;*/
 /*    background-color: ua;*/
 }
-
+.container-produtos{
+    width: 950px;
+/*    background-color: aqua;*/
+    padding-left: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start ;
+}
 .categoria-item{
     width: auto;
     height: 40px;
@@ -330,10 +356,19 @@ main{
     flex-grow: 1;
    
 }
+/*
+.box-categoria{
+    display: none;
+}
+.box-categoria:checked  .categoria-item{
+    background-color: rgb(92, 76, 184);
+}
+*/
 .categoria-item:hover{
     transition: all .4s;
     cursor:default;
     background-color: rgb(92, 76, 184);
+    
    
 }
 .categoria-item:hover > p{

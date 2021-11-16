@@ -1,9 +1,15 @@
 <?php
     require_once("controller/produto/listarProduto.php");
+    require_once("functions/compararCategoria.php");
+    require_once("controller/categoria/exibirCategorias.php");
+    
+    $idProduto = (int) null;
     $nome = (string) null;
     $preco = (string) null;
     $descricao = (string) null;
     $desconto = (string) null;
+    $imagem = (string) null;
+    $preview = (string) null;
     $idProduto = (string) null;
     $modo = (string) "Cadastrar";
     // $nome = (string) null;
@@ -14,6 +20,8 @@
         $preco = $_SESSION['produto']['preco'];
         $descricao = $_SESSION['produto']['descricao'];
         $desconto = $_SESSION['produto']['desconto'];
+        $imagem = $_SESSION['produto']['imagem'];
+        $preview = $_SESSION['produto']['gif_preview'];
         $modo = (string) "Atualizar";
         unset($_SESSION['produto']);
     }
@@ -33,7 +41,7 @@
         ?>
         <main class="display-column">
             
-            <form name="formProduct" action="controller/produto/cadastroProduto.php?id=<?=$idProduto?>&modo=<?=$modo?>" method="POST">
+            <form enctype="multipart/form-data"name="formProduct" action="controller/produto/cadastroProduto.php?id=<?=$idProduto?>&modo=<?=$modo?>" method="POST">
                 <div class="container-main">
                     <div class="cadastro-categoria">
                         <h1>Cadastro de Produtos</h1>
@@ -41,21 +49,59 @@
                             <div class="form-deashboard">
                                 <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" value="<?=$nome?>"/>
                                 <input type="text" class="campo-txt" placeholder="Preço" name="txtPreco" value="<?=$preco?>"/>
-                                <input type="text" class="campo-txt" placeholder="Descrição" name="txtDescricao" value="<?=$descricao?>"/>
-                                <input type="text" class="campo-txt" placeholder="Desconto" name="txtDesconto" value="<?=$desconto?>"/>
-                                <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
+                                <input type="number" class="campo-txt" placeholder="Desconto" name="txtDesconto" value="<?=$desconto?>"/>
+                                <input type="file" id="inputFile" name="preview" accept="image/jpeg,image/png,image/jpg"/>
+                                <label for="inputFile" class="input-file">
+                                    Selecione um GIF de preview
+                                </label>
                             </div>
                     </div>
                     <div class="listar-categoria">
-                        <div id="demo-image">
-                            <img src="img/icons/camera.png">
-                        </div>
+                        <input type="file" id="inputImage" name="banner" accept="image/jpeg,image/png,image/jpg" value="<?=$imagem?>">
+                        <label  for="inputImage" id="demo-image">
+                            <img src="files/<?=$imagem?>">
+                        </label>
+<!--
                         <label class="input-file" for="imgJogo">Selecione uma Imagem</label>
                         <input name="fileFoto" id="imgJogo" type="file">
+-->
+                    </div>
+                    
+                </div>
+                <div class="container-main">
+                    <div class="container-produtos">
+                        <p>Descrição:</p>
+                        <textarea name="txtDescricao" class="text-area" placeholder="rass" value="">
+                            <?=$descricao?>
+                        </textarea>
+                        <div>
+                            <p>Categorias:</p>
+                        </div>
+                        <?php
+                            //recebendo array categorias
+                            $categorias = exibirCategoria();
+                            //utilizando fetch assoc para administrar while e array
+                            while($rsCategorias = mysqli_fetch_assoc($categorias)){               
+                        ?>
+                        <input type="checkbox" id="<?=$rsCategorias['nome']?>" name="<?=$rsCategorias['nome']?>"class="box-categoria" value="#categoria.<?=$rsCategorias['id_categoria']?>" <?=compararCategoria($idProduto,$rsCategorias['id_categoria'])?>>
+                        <label for="<?=$rsCategorias['nome']?>" class="categoria-item">        
+                            <p><?=$rsCategorias['nome']?></p>
+                            <div>
+                    
+                            </div>
+                        </label> 
+                         <?php
+                            }
+                        ?>
                     </div>
                 </div>
+                <div class="submit-produtos">
+                    <div class="">
+                        <p><input type="checkbox" name="destaque" value="1"> Destacar este produto</p>
+                    </div>
+                    <input type="submit" class="btn-form btn-produto" value="<?=$modo?>" name="btnCategoria"/>
+                </div>
             </form>
-            
 
             <div class="container-main">
                 <div id="container-contato">
@@ -86,7 +132,7 @@
                                     <a href="controller/produto/editarProduto.php?id=<?=$rsProduto['id_produto']?>">
                                         <img src="img/icons/edit.png" class="icons-bd">
                                     </a>
-                                    <a href="controller/produto/excluirProduto.php?id=<?=$rsProduto['id_produto']?>">
+                                    <a href="controller/produto/excluirProduto.php?id=<?=$rsProduto['id_produto']?>&foto=<?=$rsProduto['imagem']?>&preview=<?=$rsProduto['gif_preview']?>">
                                         <img src="img/icons/delete.png" class="icons-bd">
                                     </a>
                                 </td>

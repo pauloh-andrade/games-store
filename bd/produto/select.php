@@ -18,4 +18,10 @@ function selectInstanciaProduto($idProduto){
     $select = mysqli_query($conexao,$sql);
     return $select;
 }
+function selectUltimoProduto(){
+    $sql= "select * from tbl_produto order by id_produto desc limit 1";
+    $conexao= conexaoMysql();
+    $select = mysqli_query($conexao,$sql);
+    return $select;
+};
 ?>

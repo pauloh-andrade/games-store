@@ -18,4 +18,5 @@ if($rsProduto = mysqli_fetch_assoc($dadosProduto)){
     header('location:../../produto.php');
    
 }
+
 ?>
