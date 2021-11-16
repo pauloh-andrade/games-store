@@ -9,6 +9,7 @@ require_once("../../bd/produto/insert.php");
 require_once("../../bd/produto/select.php");
 require_once("../../bd/produto/update.php");
 require_once("../../bd/produtoCategoria/insert.php");
+require_once("../../bd/produtoCategoria/delete.php");
 require_once(SRC."functions/upload.php");
 
 
@@ -50,8 +51,8 @@ $destaque = (int) 0;
     if(strtoupper($_GET['modo']) == "CADASTRAR"){
         if(insertProduto($produto)){
             //conectando categorias com produtos
-            $produto = selectUltimoProduto();
-            $rsProduto = mysqli_fetch_assoc($produto);
+            $produtoCadastrado = selectUltimoProduto();
+            $rsProduto = mysqli_fetch_assoc($produtoCadastrado);
             $idProdutoCadastrado = $rsProduto['id_produto'];
             if(insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias)){
                 echo("<script>
@@ -75,10 +76,24 @@ $destaque = (int) 0;
     }
     elseif(strtoupper($_GET['modo']) == "ATUALIZAR"){
         if(updateProduto($produto)){
-            echo("<script>
-                    alert('Produto atualizado com sucesso');
-                    window.location.href='../../produto.php';
+            deleteProdutoCategoria($id);
+            //conectando categorias com produtos
+            $produtoCadastrado = selectUltimoProduto();
+            $rsProduto = mysqli_fetch_assoc($produtoCadastrado);
+            $idProdutoCadastrado = $rsProduto['id_produto'];
+            if(insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias)){
+                echo("<script>
+                        alert('Produto cadastrado com sucesso');
+                        window.location.href='../../produto.php';
+                    </script>");
+            }
+            else{
+                echo("<script>
+                    alert('Falha ao cadastrar Produto');
+                    window.history.back();
                 </script>");
+            }
+            
         }
         else{
             echo("<script>

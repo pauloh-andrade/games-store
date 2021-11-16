@@ -17,8 +17,12 @@ function updateProduto($arrayProduto){
                 gif_preview='".$arrayProduto['gif_preview']."'
                 
                 where id_produto =".$arrayProduto['id_produto'];
+    
                 
+    //abrindo conexão com o banco
     $conexao = conexaoMysql();
+    
+    //inserindo
     if(mysqli_query($conexao,$sql)){
         return true;
     }

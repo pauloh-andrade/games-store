@@ -25,6 +25,8 @@ function insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias){
     
         //inserindo
         if(!mysqli_query($conexao,$sql)){
+            echo($sql);
+            die;
            return false; 
         }
     }
