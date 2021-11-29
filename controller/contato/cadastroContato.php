@@ -14,11 +14,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST['txtEmail'];
     $numero = $_POST['txtNumero'];
     
-    $contato = array(
+    
+    if($nome == null || $email == null || $numero == null){
+        echo("<script>
+                alert('" . ERRO_CAIXA_VAZIA . "') 
+                window.history.back()
+            </script>");
+    }
+    else{
+        $contato = array(
         "nome" => $nome,
         "email" => $email,
         "numero" => $numero
-    );
+        );
     
         if(insertContato($contato)){
             echo("<script>
@@ -32,6 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     window.history.back();
                 </script>");
         }
- 
-} 
+    }   
+}
+   
 ?>

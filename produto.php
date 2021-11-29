@@ -8,7 +8,7 @@
     $preco = (string) null;
     $descricao = (string) null;
     $desconto = (string) null;
-    $imagem = (string) null;
+    $imagem = (string) "demo.png";
     $preview = (string) null;
     $idProduto = (string) null;
     $modo = (string) "Cadastrar";
@@ -18,7 +18,7 @@
         $idProduto = $_SESSION['produto']['id_produto'];
         $nome = $_SESSION['produto']['nome'];
         $preco = $_SESSION['produto']['preco'];
-        $descricao = $_SESSION['produto']['descricao'];
+        $descricao = $_SESSION['produto']['descricao']  ;
         $desconto = $_SESSION['produto']['desconto'];
         $imagem = $_SESSION['produto']['imagem'];
         $preview = $_SESSION['produto']['gif_preview'];
@@ -33,6 +33,7 @@
         <meta charset="UTF-8">
          <link rel="stylesheet" type="text/css" href="style/style.css">
         <link rel="stylesheet" type="text/css" href="style/deashboard.css">
+        <script src="js/checkbox.js" defer></script>
         <title>CMS</title>
     </head>
     <body>
@@ -47,9 +48,9 @@
                         <h1>Cadastro de Produtos</h1>
                         <div class="hr-title"> <br></div>
                             <div class="form-deashboard">
-                                <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" value="<?=$nome?>"/>
-                                <input type="text" class="campo-txt" placeholder="Preço" name="txtPreco" value="<?=$preco?>"/>
-                                <input type="number" class="campo-txt" placeholder="Desconto" name="txtDesconto" value="<?=$desconto?>"/>
+                                <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" maxlength="50"value="<?=$nome?>"/>
+                                <input type="text" class="campo-txt" placeholder="Preço" name="txtPreco" maxlength="5"value="<?=$preco?>"/>
+                                <input type="text" class="campo-txt" placeholder="Desconto" name="txtDesconto" maxlength="5" value="<?=$desconto?>"/>
                                 <input type="file" id="inputFile" name="preview" accept="image/jpeg,image/png,image/jpg"/>
                                 <label for="inputFile" class="input-file">
                                     Selecione um GIF de preview
@@ -71,9 +72,7 @@
                 <div class="container-main">
                     <div class="container-produtos">
                         <p>Descrição:</p>
-                        <textarea name="txtDescricao" class="text-area" placeholder="rass" value="">
-                            <?=$descricao?>
-                        </textarea>
+                        <textarea name="txtDescricao" class="text-area" maxlength="300" ><?=$descricao?></textarea>
                         <div>
                             <p>Categorias:</p>
                         </div>

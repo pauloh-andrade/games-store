@@ -35,7 +35,7 @@
                     <h1>Cadastro de Categorias</h1>
                     <div class="hr-title"><br></div>
                     <form class="form-deashboard" action="controller/categoria/cadastroCategoria.php?modo=<?=$modo?>&id=<?=$id?>" name="formCategoria" method="POST">
-                        <input type="text" class="campo-txt" placeholder="Digite o nome da categoria" name="txtCategoria" value="<?=$categoria?>"/>
+                        <input type="text" class="campo-txt" placeholder="Digite o nome da categoria" maxlength="20" name="txtCategoria" value="<?=$categoria?>"/>
                         <div class="categoria-txt"></div>
                         <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
                     </form>

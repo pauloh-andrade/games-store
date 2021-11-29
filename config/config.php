@@ -23,4 +23,14 @@ $extensoesPermitidas = array ("image/png","image/jpg","image/jpeg");
 define('EXTENSION_ALLOWED', $extensoesPermitidas);
 const TAMANHO_FILE = "5120";
 
+//constantes para respostas de manipulação de dados
+const SUCESSO_INSERIR = "Dados inseridos com sucesso";
+const SUCESSO_ATUALIZAR= "Dados atualizados com sucesso";
+const SUCESSO_DELETAR= "Dados deletados com sucesso";
+
+const FALHA_INSERIR = "Falha ao inserir os dados no Banco";
+const FALHA_ATUALIZAR= "Falha ao Atualizar os dados no Banco";
+const FALAHA_DELETAR= "Falha ao Excluir os dados no Banco";
+
+const ERRO_CAIXA_VAZIA= "Por favor preencha todos os campos";
 ?>

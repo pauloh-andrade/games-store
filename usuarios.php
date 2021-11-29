@@ -33,9 +33,9 @@
                     <h1>Cadastro de Usuários</h1>
                     <div class="hr-title"> <br></div>
                     <form  class="form-deashboard" name="formUsers" action="controller/usuarios/cadastroUsuarios.php?modo=<?=$modo?>&id=<?=$idUsuario?>"  method="POST">
-                        <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" value="<?=$nome?>"/>
-                        <input type="text" class="campo-txt" placeholder="Login" name="txtLogin" value="<?=$login?>"/>
-                        <input type="password" class="campo-txt" placeholder="Senha" name="txtSenha" value=""/>
+                        <input type="text" class="campo-txt" placeholder="Nome" name="txtNome" maxlength="30" value="<?=$nome?>"/>
+                        <input type="text" class="campo-txt" placeholder="Login" name="txtLogin" maxlength="30"value="<?=$login?>"/>
+                        <input type="password" class="campo-txt" placeholder="Senha" maxlength="12"name="txtSenha" value=""/>
                         <input type="submit" class="btn-form" value="<?=$modo?>" name="btnCategoria"/>
                     </form>
                 </div>

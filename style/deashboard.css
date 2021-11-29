@@ -95,6 +95,7 @@ p{
     font-weight: 100;
     color: var(--cor-font-main);
     position: relative;
+    
 }
 .campo-txt:focus{
 /*    border: 1px solid #1a1d3d;*/
@@ -297,10 +298,9 @@ main{
     cursor: pointer;
 }
 #demo-image img{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
-    filter: brightness(40%);
 }
 .input-file{
     width: 490px;
@@ -360,6 +360,8 @@ main{
 .box-categoria{
     display: none;
 }
+*/
+/*
 .box-categoria:checked  .categoria-item{
     background-color: rgb(92, 76, 184);
 }

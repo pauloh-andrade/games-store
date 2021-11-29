@@ -36,8 +36,14 @@ $destaque = (int) 0;
     $imagePreview = uploadFile($_FILES['preview']);
     $imageBanner = uploadFile($_FILES['banner']);
                                                   
-
-    $produto = array(
+    if($nome == null || $preco == null || $descricao == null){
+        echo("<script>
+                alert('" . ERRO_CAIXA_VAZIA . "') 
+                window.history.back()
+            </script>");
+    }
+    else{
+      $produto = array(
         "id_produto" => $id,
         "nome" => $nome,
         "preco" => $preco,
@@ -56,20 +62,20 @@ $destaque = (int) 0;
             $idProdutoCadastrado = $rsProduto['id_produto'];
             if(insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias)){
                 echo("<script>
-                        alert('Produto cadastrado com sucesso');
+                        alert('".SUCESSO_INSERIR."');
                         window.location.href='../../produto.php';
                     </script>");
             }
             else{
                 echo("<script>
-                    alert('Falha ao cadastrar Produto');
+                    alert('".FALAHA_INSERIR."');
                     window.history.back();
                 </script>");
             }
         }
         else{
             echo("<script>
-                    alert('Falha ao cadastraar Produto');
+                    alert('".FALAHA_INSERIR."');
                     window.history.back();
                 </script>");
         }
@@ -83,13 +89,13 @@ $destaque = (int) 0;
             $idProdutoCadastrado = $rsProduto['id_produto'];
             if(insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias)){
                 echo("<script>
-                        alert('Produto cadastrado com sucesso');
+                        alert('".SUCESSO_ATUALIZAR."');
                         window.location.href='../../produto.php';
                     </script>");
             }
             else{
                 echo("<script>
-                    alert('Falha ao cadastrar Produto');
+                    alert('".FALAHA_ATUALIZAR."');
                     window.history.back();
                 </script>");
             }
@@ -97,10 +103,13 @@ $destaque = (int) 0;
         }
         else{
             echo("<script>
-                    alert('Falha ao editar produto');
+                    alert('".FALAHA_ATUALIZAR."');
                    window.history.back();
                 </script>");
         }
     }
+ }  
+      
  }
+    
 ?>

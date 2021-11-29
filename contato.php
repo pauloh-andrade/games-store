@@ -1,5 +1,6 @@
 <?php
    require_once("controller/contato/listarContato.php");
+    require_once("config/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

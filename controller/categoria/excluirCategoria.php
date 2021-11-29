@@ -9,13 +9,13 @@ require_once(SRC . "/bd/categoria/delete.php");
 
 if(deleteCategoria($_GET['id'])){
      echo("<script>
-                alert('Categoria Excluída com sucesso');
+                alert('".SUCESSO_DELETAR."');
                 window.location.href = '../../categoria.php';
             </script>");
 }
 else{
     echo("<script>
-                alert('Não foi possível excuir');
+                alert('".FALHA_DELETAR."');
                 window.location.href = '../../categoria.php';
             </script>");
 }

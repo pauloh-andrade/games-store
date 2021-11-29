@@ -10,13 +10,13 @@ require_once("../../bd/contato/delete.php");
 
 if(deleteContato($_GET['id'])){
     echo("<script>
-        alert('Contato excluído com  sucesso');
+        alert('".SUCESSO_DELETAR."');
         window.location.href='../../contato.php';
     </script>");
 }
 else{
     echo("<script>
-        alert('Erro ao excluir contato');
+        alert('".FALHA_DELETAR."');
       
     </script>");
 }

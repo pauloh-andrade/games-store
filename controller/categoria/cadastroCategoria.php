@@ -17,37 +17,44 @@
         $categoria = $_POST['txtCategoria'];
         $id = $_GET['id'];
         
-        if(strtoupper($_GET['modo']) == "SALVAR"){
-            //chamando função de insert e validando
-            if(insertCategoria($categoria)){
-                echo("<script>
-                        alert('Categoria inserida com sucesso');
-                        window.location.href = '../../categoria.php';
-                    </script>");
-            }
-            else{
-                echo("<script>
-                        alert('Erro: Falha ao inserir registro no banco.');
-                        window.history.back();
-                    </script>");      
-            }
+        if($categoria == null){
+            echo("<script>
+                    alert('" . ERRO_CAIXA_VAZIA . "') 
+                    window.history.back()
+                </script>");
         }
-        else {
-            if(strtoupper($_GET['modo']) == "ATUALIZAR"){
-                if(updateCategoria($id,$categoria)){
+        else{
+            if(strtoupper($_GET['modo']) == "SALVAR"){
+                //chamando função de insert e validando
+                if(insertCategoria($categoria)){
                     echo("<script>
-                            alert('Categoria inserida com sucesso');
+                            alert('".SUCESSO_INSERIR."');
                             window.location.href = '../../categoria.php';
                         </script>");
                 }
                 else{
                     echo("<script>
-                            alert('Erro: Falha ao inserir registro no banco.');
+                            alert('".FALHA_INSERIR."');
                             window.history.back();
                         </script>");      
                 }
             }
-        }
+            else {
+                if(strtoupper($_GET['modo']) == "ATUALIZAR"){
+                    if(updateCategoria($id,$categoria)){
+                        echo("<script>
+                                alert('".SUCESSO_ATUALIZAR."');
+                                window.location.href = '../../categoria.php';
+                            </script>");
+                    }
+                    else{
+                        echo("<script>
+                                alert('".FALHA_ATUALIZAR."');
+                                window.history.back();
+                            </script>");      
+                    }
+                }
+            } 
+        } 
     }
-    
 ?>

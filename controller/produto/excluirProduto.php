@@ -13,23 +13,25 @@ require_once(SRC."/bd/produtoCategoria/delete.php");
 
     if(deleteProdutoCategoria($_GET['id'])){
         if(deleteProduto($_GET['id'])){
+        echo(SRC.DIRETORIO_FILE.$foto);
+   
         unlink(SRC.DIRETORIO_FILE.$foto);
         unlink(SRC.DIRETORIO_FILE.$preview);
         echo("<script>
-                alert('Produto excluído com  sucesso');
+                alert('".SUCESSO_DELETAR."');
                 window.location.href='../../produto.php';
             </script>");
         }
         else{
             echo("<script>
-                alert('Erro ao excluir Produto');
+                alert('".FALHA_DELETAR."');
                 window.location.href='../../produto.php';
             </script>");
         }  
     }
     else{
         echo("<script>
-                alert('Erro ao excluir Produto');
+                alert('".FALHA_DELETAR."');
                 window.location.href='../../produto.php';
             </script>");
     }
