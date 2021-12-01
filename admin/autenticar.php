@@ -27,7 +27,10 @@
         //verificando se o mysqli retornou algo
         if($rsUsuario = mysqli_fetch_assoc($select)){
             session_start();
+            //recebendo nome do usuario
             $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
+            //status da sessão
+            $_SESSION['statusLogin'] = true;
             header('location: dashboard.php');
         }
         else{

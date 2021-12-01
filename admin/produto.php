@@ -2,6 +2,11 @@
     require_once("controller/produto/listarProduto.php");
     require_once("functions/compararCategoria.php");
     require_once("controller/categoria/exibirCategorias.php");
+    require_once("session.php");
+
+    //validando sessão
+    sessao();
+
     
     $idProduto = (int) null;
     $nome = (string) null;
@@ -12,8 +17,7 @@
     $preview = (string) null;
     $idProduto = (string) null;
     $modo = (string) "Cadastrar";
-    // $nome = (string) null;
-    session_start();
+
     if(isset($_SESSION['produto'])){
         $idProduto = $_SESSION['produto']['id_produto'];
         $nome = $_SESSION['produto']['nome'];
@@ -86,7 +90,7 @@
                         <label for="<?=$rsCategorias['nome']?>" class="categoria-item">        
                             <p><?=$rsCategorias['nome']?></p>
                             <div>
-                    
+                           
                             </div>
                         </label> 
                          <?php

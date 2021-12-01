@@ -9,16 +9,18 @@
     </head>
     <body id="login">
         <section class="container-login">
-            <form action="autenticar.php" name="formLogin" method="POST">
-                <h1>Autenticação C M S</h1>
-                <div class="hr-title"></div>
-                <div class="itens">
-                    <input class="campo-txt" placeholder="Login" type="text" name="txtLogin">
-                    <input class="campo-txt" placeholder="Senha" type="password" name="txtSenha">
-                    <input class="btn-form"type="submit" value="Logar">
-                    <p>- Games Store - </p>
-                </div>
-            </form>
+            <div class="form-login">
+                <form action="autenticar.php" name="formLogin" method="POST">
+                    <h1>Autenticação C M S</h1>
+                    <div class="hr-title"></div>
+                    <div class="itens">
+                        <input class="campo-txt" placeholder="Login" type="text" name="txtLogin">
+                        <input class="campo-txt" placeholder="Senha" type="password" name="txtSenha">
+                        <input class="btn-form"type="submit" value="Logar">
+                        <p>- Games Store - </p>
+                    </div>
+                </form>
+            </div>
         </section>
     </body>
 </html>

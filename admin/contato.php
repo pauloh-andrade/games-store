@@ -1,6 +1,9 @@
 <?php
    require_once("controller/contato/listarContato.php");
     require_once("config/config.php");
+    require_once("session.php");
+
+    sessao();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

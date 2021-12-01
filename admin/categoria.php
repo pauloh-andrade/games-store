@@ -1,8 +1,10 @@
 <?php
-    session_start();
     require_once("config/config.php");
     require_once("bd/conexaoMysql.php");
     require_once(SRC . "controller/categoria/exibirCategorias.php");
+    require_once("session.php");
+
+    sessao();
 
     $categoria = (string) null;
     $modo = (String) "Salvar";

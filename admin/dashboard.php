@@ -1,3 +1,8 @@
+<?php
+require_once("session.php");
+
+sessao();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -5,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../style/style.css">
         <link rel="stylesheet" type="text/css" href="../style/dashboard.css">
+        
         <title>CMS</title>
     </head>
     <body>
@@ -60,7 +66,7 @@
             </div>
         </nav>
         <main>
-            <p>Bem-Vindo User312</p>
+            <p>Bem-Vindo <?=$_SESSION['nomeUsuario']?> </p>
             <p class="txt-background">Por favor, selecione o conteúdo que deseja editar.</p>
         </main>
         <footer>

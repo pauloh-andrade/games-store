@@ -1,11 +1,16 @@
 <?php
     require_once("config/config.php");
     require_once(SRC."controller/usuarios/listarUsuario.php");
+    require_once("session.php");
+
+    
+    sessao();
+
     $nome =(string)null;
     $login =(string)null;
     $idUsuario = (int)null;
     $modo =(string) "Cadastrar";
-    session_start();
+
     if(isset($_SESSION['usuario'])){
         $nome = $_SESSION['usuario']['nome'];
         $login = $_SESSION['usuario']['login'];
