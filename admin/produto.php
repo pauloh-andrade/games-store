@@ -37,7 +37,7 @@
         <meta charset="UTF-8">
          <link rel="stylesheet" type="text/css" href="../style/style.css">
         <link rel="stylesheet" type="text/css" href="../style/dashboard.css">
-        <script src="js/checkbox.js" defer></script>
+        <script src="../js/checkbox.js" defer></script>
         <title>CMS</title>
     </head>
     <body>
@@ -62,10 +62,13 @@
                             </div>
                     </div>
                     <div class="listar-categoria">
-                        <input type="file" id="inputImage" name="banner" accept="image/jpeg,image/png,image/jpg" value="<?=$imagem?>">
+                        <input type="file" id="inputImage"name="banner" accept="image/jpeg,image/png,image/jpg" value="<?=$imagem?>">
                         <label  for="inputImage" id="demo-image">
-                            <img src="files/<?=$imagem?>">
+                            <img id="imagem-demo" src="files/<?=$imagem?>">
+                     
+                            <div id="preview-image-name"><p id="text-image-name"></p></div>
                         </label>
+                        
 <!--
                         <label class="input-file" for="imgJogo">Selecione uma Imagem</label>
                         <input name="fileFoto" id="imgJogo" type="file">
@@ -89,9 +92,7 @@
                         <input type="checkbox" id="<?=$rsCategorias['nome']?>" name="<?=$rsCategorias['nome']?>"class="box-categoria" value="#categoria.<?=$rsCategorias['id_categoria']?>" <?=compararCategoria($idProduto,$rsCategorias['id_categoria'])?>>
                         <label for="<?=$rsCategorias['nome']?>" class="categoria-item">        
                             <p><?=$rsCategorias['nome']?></p>
-                            <div>
-                           
-                            </div>
+                            
                         </label> 
                          <?php
                             }

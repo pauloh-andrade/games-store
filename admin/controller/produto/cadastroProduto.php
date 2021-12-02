@@ -81,6 +81,15 @@ $destaque = (int) 0;
         }
     }
     elseif(strtoupper($_GET['modo']) == "ATUALIZAR"){
+        //apagando imagem cadastrada
+        $ultimoProduto = selectUltimoProduto();
+        $rsProdutoImagem = mysqli_fetch_assoc($ultimoProduto);
+
+        //apagando imagens antigas
+        unlink(SRC.DIRETORIO_FILE.$rsProdutoImagem['imagem']);
+        unlink(SRC.DIRETORIO_FILE.$rsProdutoImagem['gif_preview']);
+
+        //atualizando produto
         if(updateProduto($produto)){
             deleteProdutoCategoria($id);
             //conectando categorias com produtos
@@ -88,9 +97,7 @@ $destaque = (int) 0;
             $rsProduto = mysqli_fetch_assoc($produtoCadastrado);
             $idProdutoCadastrado = $rsProduto['id_produto'];
 
-            //apagando imagens antigas
-            unlink(SRC.DIRETORIO_FILE.$rsProduto['imagem']);
-            unlink(SRC.DIRETORIO_FILE.$rsProduto['gif_preview']);
+            
 
             if(insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias)){
                 echo("<script>

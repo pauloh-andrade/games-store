@@ -330,7 +330,7 @@
 			<div class="container-contato">
 				<h1>Entre em contato</h1>
 				<div class="hr-title"></div>
-				<form name="formContato" action="controller/contato/cadastroContato.php" method="POST">
+				<form name="formContato" action="admin/controller/contato/cadastroContato.php" method="POST">
 					<div class="nome">
 						<input type="text" placeholder="Digite seu nome" name="txtNome">
 					</div>

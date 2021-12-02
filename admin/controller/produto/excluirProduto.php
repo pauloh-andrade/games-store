@@ -16,7 +16,7 @@ require_once(SRC."/bd/produtoCategoria/delete.php");
    
         unlink(SRC.DIRETORIO_FILE.$foto);
         unlink(SRC.DIRETORIO_FILE.$preview);
-
+        
         echo("<script>
                 alert('".SUCESSO_DELETAR."');
                 window.location.href='../../produto.php';

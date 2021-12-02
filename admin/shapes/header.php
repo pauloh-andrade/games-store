@@ -47,9 +47,11 @@
                 </a>
             </div>
             <div class="logout">
+                <a href="index.php">
                  <div class="item-cms">
                     <img src="img/icons/exit.png">
                     <p>Logout</p>
                 </div>
+                </a>
             </div>
         </nav>

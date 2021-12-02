@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(insertContato($contato)){
             echo("<script>
                     alert('Aguarde enquanto entramos em contato com você');
-                   window.location.href='../../index.php';
+                   window.location.href='../../../index.php';
                 </script>");
         }
         else{
