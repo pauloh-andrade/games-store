@@ -373,14 +373,16 @@ main{
 .purple p{color: white;}
 
 .box-categoria{
-    display: none;
+    display:none;
 }
-
-/*
-.box-categoria:checked  .categoria-item{
+.box-categoria:checked + label {
     background-color: rgb(92, 76, 184);
 }
-*/
+/* 
+.box-categoria:checked  .categoria-item{
+    background-color: rgb(92, 76, 184);
+} */
+
 .categoria-item:hover{
     transition: all .4s;
     cursor:default;

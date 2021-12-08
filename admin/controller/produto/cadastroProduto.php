@@ -85,9 +85,17 @@ $destaque = (int) 0;
         $ultimoProduto = selectUltimoProduto();
         $rsProdutoImagem = mysqli_fetch_assoc($ultimoProduto);
 
-        //apagando imagens antigas
-        unlink(SRC.DIRETORIO_FILE.$rsProdutoImagem['imagem']);
-        unlink(SRC.DIRETORIO_FILE.$rsProdutoImagem['gif_preview']);
+        // //testando se a imagem foi alterada e apgando imagem antiga
+        // if($imagePreview != null && $imagePreview != $rsProdutoImagem['imagem']){
+        //     //apagando imagens antigas
+        //     unlink(SRC.DIRETORIO_FILE.$rsProdutoImagem['imagem']);
+        // }
+        // if($imageBanner != null && $imageBanner != $rsProdutoImagem['gif_preview']){
+        //     unlink(SRC.DIRETORIO_FILE.$rsProdutoImagem['gif_preview']);
+        // }
+        
+        
+        
 
         //atualizando produto
         if(updateProduto($produto)){
@@ -100,6 +108,7 @@ $destaque = (int) 0;
             
 
             if(insertProdutoCategoria($idProdutoCadastrado, $arrayCategorias)){
+            
                 echo("<script>
                         alert('".SUCESSO_ATUALIZAR."');
                         window.location.href='../../produto.php';

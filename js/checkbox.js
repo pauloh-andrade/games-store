@@ -1,25 +1,11 @@
 "use strict";
-const cbox = document.querySelectorAll(".categoria-item");
-
-const trocarCor = (box) =>{
-    if(box.className == "purple"){
-        box.classList = "categoria-item";
-    }
-    else{
-        box.classList = "purple";
-    }
-} 
-
-for (let i = 0; i < cbox.length; i++) {
-    cbox[i].addEventListener("click", function() {
-        trocarCor(cbox[i]);
-        
-    });
- }
+//função para carregar nome da imagem carregada
 const nomeImagem = (nome) =>{
     const container = document.getElementById("text-image-name");
     container.textContent = nome
 }
+
+//função para fazer upload da imagem de preview
 const exibirImagem = (e) =>{
     const imagemPreview =  e.target.files.item(0)
     const reader = new FileReader();
