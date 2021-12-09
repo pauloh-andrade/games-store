@@ -5,31 +5,18 @@
     //instanciando slim
     $app = new \Slim\App();
 
-    //end-point de jogos
-    $app->get('/games', function($request, $response, $args){
+    //end-point de categorias
+    $app->get('/categorias', function($request, $response, $args){
         //import do arquivo de busca no banco
-        require_once("../controller/produto/listarProduto.php");
+        require_once("../controller/categoria/exibirCategorias.php");
+
         //import do arquivo para conversão em json
         require_once("../functions/json.php");
 
-        //verificando parametros via queryString
-        if(isset($request ->getQueryParams()['busca'])){
-            $busca = (string) null;
-            $busca = $request ->getQueryParams()['busca'];
-
-            //transformando em json
-            if($listaDados = listarProdutosPelaCategoria($busca)){
-                if($arrayDados = criarArrayProduto($listaDados)){
-                    $jsonProduto = criarJson($arrayDados);
-                }
-            }
-        }
-        else{
-            //transformando em json
-            if($listaDados = listarProdutos()){
-                if($arrayDados = criarArrayProduto($listaDados)){
-                    $jsonProduto = criarJson($arrayDados);
-                }
+        //transformando em json
+         if($listaDados = exibirCategoria()){
+            if($arrayDados = criarArrayCategoria($listaDados)){
+                $jsonProduto = criarJson($arrayDados);
             }
         }
 
@@ -45,7 +32,6 @@
                                 ->write('{"message":"Dados não encontrados no banco"}');
         }
     }); 
-
     //Carrega todos os endPoints para execução
     $app->run();
 ?>

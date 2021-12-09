@@ -15,4 +15,25 @@ function exibirCategoria(){
     
     return $dados;
 }
+
+
+//função para criar uma array apartir de um select no banco
+function criarArrayCategoria($objeto){
+    $count =(int) 0;
+
+    while($rsDados = mysqli_fetch_assoc($objeto)){
+       $arrayDados[$count] = array(
+           "id"         =>$rsDados['id_categoria'],
+           "nome"       =>$rsDados['nome']
+       );
+       $count++;
+    }
+    if(isset($arrayDados)){
+        return $arrayDados;
+    }
+    else{
+        return false;
+    }
+}
+
 ?> 

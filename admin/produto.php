@@ -1,4 +1,5 @@
 <?php
+    require_once("config/config.php");
     require_once("controller/produto/listarProduto.php");
     require_once("functions/compararCategoria.php");
     require_once("controller/categoria/exibirCategorias.php");
@@ -37,7 +38,7 @@
         <meta charset="UTF-8">
          <link rel="stylesheet" type="text/css" href="../style/style.css">
         <link rel="stylesheet" type="text/css" href="../style/dashboard.css">
-        <script src="../js/checkbox.js" defer></script>
+        <script src="../js/imageDemo.js" defer></script>
         <title>CMS</title>
     </head>
     <body>
