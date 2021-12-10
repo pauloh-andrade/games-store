@@ -1,11 +1,11 @@
 'use strict';
 import {getProdutos} from './produtos.js';
 
-const criarCard = ({nome,descricao,preco}) =>{
+const criarCard = ({nome,descricao,preco,imagem}) =>{
     const card = document.createElement('div');
     card.classList.add('card-produto');
     card.innerHTML = `
-        <img src="img/jogos/newworld.jpg" alt="New World">
+        <img src="admin/files/${imagem}" alt="New World">
         <div class="hr-card"></div>
         <div class="nome-jogo">
             ${nome}
